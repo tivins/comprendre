@@ -82,3 +82,12 @@ Les exemples sont fournis principalement en :
 ---
 
 **Note importante** : Les design patterns ne sont pas des solutions miracles. Ils doivent être utilisés judicieusement. Un pattern mal appliqué peut compliquer inutilement votre code. L'objectif est de résoudre un problème réel, pas d'appliquer un pattern pour le plaisir.
+
+---
+
+Liens:
+
+* [Refactoring Guru][1]
+
+
+[1]: https://refactoring.guru/design-patterns
