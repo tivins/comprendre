@@ -33,8 +33,8 @@ Le **langage ubiquitaire** est un vocabulaire commun utilisé par tous les membr
 ### Exemple
 
 Dans un système de **e-commerce** :
-- ✅ Bon : `Order`, `OrderItem`, `Payment`, `Shipment`
-- ❌ Mauvais : `OrderDTO`, `OrderEntity`, `OrderData`
+- Bon : `Order`, `OrderItem`, `Payment`, `Shipment`
+- À éviter : `OrderDTO`, `OrderEntity`, `OrderData`
 
 ## 4. Entités (Entities)
 

@@ -26,7 +26,7 @@ Cette documentation vous permettra de :
 
 Les design patterns sont classés en trois catégories principales :
 
-### 🏗️ Patterns de Création (Creational Patterns)
+### Patterns de Création (Creational Patterns)
 Résolvent les problèmes liés à la création d'objets de manière flexible et réutilisable.
 - Singleton
 - Factory Method
@@ -34,7 +34,7 @@ Résolvent les problèmes liés à la création d'objets de manière flexible et
 - Builder
 - Prototype
 
-### 🏛️ Patterns Structurels (Structural Patterns)
+### Patterns Structurels (Structural Patterns)
 Définissent comment composer des objets pour former des structures plus grandes.
 - Adapter
 - Bridge
@@ -44,7 +44,7 @@ Définissent comment composer des objets pour former des structures plus grandes
 - Flyweight
 - Proxy
 
-### 🎭 Patterns Comportementaux (Behavioral Patterns)
+### Patterns Comportementaux (Behavioral Patterns)
 Gèrent la communication et les responsabilités entre objets.
 - Chain of Responsibility
 - Command

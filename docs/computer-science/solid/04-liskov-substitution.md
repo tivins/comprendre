@@ -21,7 +21,7 @@ Imaginez que vous avez une prise électrique standard :
 
 ## L'exemple classique : Rectangle et Square
 
-### ❌ Violation du LSP
+### Violation du LSP (à éviter)
 
 ```php
 class Rectangle {
@@ -44,12 +44,12 @@ class Rectangle {
 class Square extends Rectangle {
     public function setWidth($width): void {
         $this->width = $width;
-        $this->height = $width; // ⚠️ Comportement inattendu !
+        $this->height = $width; // Comportement inattendu !
     }
     
     public function setHeight($height): void {
         $this->width = $height;
-        $this->height = $height; // ⚠️ Comportement inattendu !
+        $this->height = $height; // Comportement inattendu !
     }
 }
 
@@ -59,13 +59,13 @@ function resizeRectangle(Rectangle $rectangle): void {
     $rectangle->setHeight(4);
     // On s'attend à un rectangle 5x4 = 20
     // Mais avec Square, on obtient 4x4 = 16 !
-    assert($rectangle->getArea() === 20); // ❌ Échoue avec Square
+    assert($rectangle->getArea() === 20); // Échoue avec Square
 }
 ```
 
 **Problème** : `Square` ne peut pas remplacer `Rectangle` car son comportement est différent. Le code qui utilise `Rectangle` s'attend à pouvoir modifier largeur et hauteur indépendamment.
 
-### ✅ Solution : Ne pas utiliser l'héritage
+### Solution : Ne pas utiliser l'héritage
 
 ```php
 interface Shape {
@@ -103,8 +103,8 @@ function printArea(Shape $shape): void {
     echo "Area: " . $shape->getArea();
 }
 
-printArea(new Rectangle(5, 4)); // ✅ Fonctionne
-printArea(new Square(4));        // ✅ Fonctionne
+printArea(new Rectangle(5, 4)); // Fonctionne
+printArea(new Square(4));        // Fonctionne
 ```
 
 ## Contrats et préconditions/postconditions
@@ -114,7 +114,7 @@ printArea(new Square(4));        // ✅ Fonctionne
 Les sous-classes ne doivent **pas renforcer** les préconditions (conditions requises avant l'exécution).
 
 ```php
-// ❌ Violation : Précondition renforcée
+// À éviter : Précondition renforcée
 class Bird {
     public function fly(): void {
         // Tous les oiseaux peuvent voler
@@ -123,15 +123,15 @@ class Bird {
 
 class Penguin extends Bird {
     public function fly(): void {
-        throw new Exception("Penguins can't fly!"); // ⚠️ Précondition renforcée
+        throw new Exception("Penguins can't fly!"); // Précondition renforcée
     }
 }
 
 function makeBirdFly(Bird $bird): void {
-    $bird->fly(); // ❌ Échoue avec Penguin
+    $bird->fly(); // Échoue avec Penguin
 }
 
-// ✅ Solution : Ne pas hériter si le comportement diffère
+// Solution : Ne pas hériter si le comportement diffère
 interface Flyable {
     public function fly(): void;
 }
@@ -155,7 +155,7 @@ class Penguin {
 Les sous-classes ne doivent **pas affaiblir** les postconditions (garanties après l'exécution).
 
 ```php
-// ❌ Violation : Postcondition affaiblie
+// À éviter : Postcondition affaiblie
 class Database {
     public function save($data): bool {
         // Sauvegarde et retourne toujours true
@@ -166,7 +166,7 @@ class Database {
 class UnreliableDatabase extends Database {
     public function save($data): bool {
         // Parfois retourne false même si la sauvegarde réussit
-        return rand(0, 1) === 1; // ⚠️ Postcondition affaiblie
+        return rand(0, 1) === 1; // Postcondition affaiblie
     }
 }
 
@@ -179,7 +179,7 @@ function saveData(Database $db, $data): void {
     // Mais UnreliableDatabase peut retourner false même si réussi
 }
 
-// ✅ Solution : Respecter le contrat
+// Solution : Respecter le contrat
 class ReliableDatabase extends Database {
     public function save($data): bool {
         try {
@@ -197,7 +197,7 @@ class ReliableDatabase extends Database {
 ### Exemple 1 : Collections
 
 ```php
-// ❌ Violation : Comportement différent
+// À éviter : Comportement différent
 class ReadOnlyList {
     protected $items = [];
     
@@ -212,16 +212,16 @@ class ReadOnlyList {
 
 class ImmutableList extends ReadOnlyList {
     public function add($item): void {
-        throw new Exception("Cannot add to immutable list"); // ⚠️ Violation LSP
+        throw new Exception("Cannot add to immutable list"); // Violation LSP
     }
 }
 
 function populateList(ReadOnlyList $list): void {
-    $list->add('item1'); // ❌ Échoue avec ImmutableList
+    $list->add('item1'); // Échoue avec ImmutableList
     $list->add('item2');
 }
 
-// ✅ Solution : Interfaces séparées
+// Solution : Interfaces séparées
 interface Readable {
     public function get($index);
 }
@@ -255,7 +255,7 @@ class ImmutableList implements Readable {
 }
 
 function populateList(Writable $list): void {
-    $list->add('item1'); // ✅ Fonctionne seulement avec MutableList
+    $list->add('item1'); // Fonctionne seulement avec MutableList
     $list->add('item2');
 }
 ```
@@ -263,7 +263,7 @@ function populateList(Writable $list): void {
 ### Exemple 2 : Paiements
 
 ```php
-// ❌ Violation : Comportement différent
+// À éviter : Comportement différent
 abstract class PaymentMethod {
     abstract public function pay(float $amount): bool;
     
@@ -292,16 +292,16 @@ class CashPayment extends PaymentMethod {
     }
     
     public function refund(float $amount): bool {
-        // ⚠️ Les espèces ne peuvent pas être remboursées de la même manière
+        // Les espèces ne peuvent pas être remboursées de la même manière
         throw new Exception("Cash cannot be refunded"); // Violation LSP
     }
 }
 
 function processRefund(PaymentMethod $payment, float $amount): void {
-    $payment->refund($amount); // ❌ Échoue avec CashPayment
+    $payment->refund($amount); // Échoue avec CashPayment
 }
 
-// ✅ Solution : Interfaces séparées
+// Solution : Interfaces séparées
 interface Payable {
     public function pay(float $amount): bool;
 }
@@ -328,14 +328,14 @@ class CashPayment implements Payable {
 }
 
 function processRefund(Refundable $payment, float $amount): void {
-    $payment->refund($amount); // ✅ Fonctionne seulement avec les paiements remboursables
+    $payment->refund($amount); // Fonctionne seulement avec les paiements remboursables
 }
 ```
 
 ### Exemple 3 : Validation
 
 ```php
-// ❌ Violation : Contrat différent
+// À éviter : Contrat différent
 abstract class Validator {
     abstract public function validate($value): bool;
     
@@ -356,7 +356,7 @@ class RequiredValidator extends Validator {
     public function validate($value): bool {
         $result = !empty($value);
         if (!$result) {
-            $this->errorMessage = "Field is required"; // ⚠️ État modifié différemment
+            $this->errorMessage = "Field is required"; // État modifié différemment
         }
         return $result;
     }
@@ -372,7 +372,7 @@ function validateValue(Validator $validator, $value): void {
     }
 }
 
-// ✅ Solution : Contrat cohérent
+// Solution : Contrat cohérent
 interface Validator {
     public function validate($value): ValidationResult;
 }
@@ -409,7 +409,7 @@ class RequiredValidator implements Validator {
 function validateValue(Validator $validator, $value): void {
     $result = $validator->validate($value);
     if (!$result->isValid()) {
-        echo $result->getErrorMessage(); // ✅ Comportement cohérent
+        echo $result->getErrorMessage(); // Comportement cohérent
     }
 }
 ```
@@ -449,17 +449,17 @@ function testSubstitution(ParentClass $obj): void {
 ### 1. Héritage "est-un" vs "se comporte comme"
 
 ```php
-// ❌ "Square est un Rectangle" mais ne se comporte pas comme un Rectangle
+// À éviter : "Square est un Rectangle" mais ne se comporte pas comme un Rectangle
 class Square extends Rectangle { }
 
-// ✅ "Square se comporte comme une Shape"
+// Bon : "Square se comporte comme une Shape"
 class Square implements Shape { }
 ```
 
 ### 2. Violation des invariants
 
 ```php
-// ❌ Invariant violé
+// À éviter : Invariant violé
 class Stack {
     protected $items = [];
     
@@ -474,7 +474,7 @@ class Stack {
 
 class Queue extends Stack {
     public function push($item): void {
-        array_unshift($this->items, $item); // ⚠️ Comportement différent
+        array_unshift($this->items, $item); // Comportement différent
     }
 }
 

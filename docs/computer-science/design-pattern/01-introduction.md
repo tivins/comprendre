@@ -69,13 +69,13 @@ Chaque pattern est généralement décrit avec :
 ### 1. Programmer vers une interface, pas une implémentation
 
 ```python
-# ❌ Mauvais : dépendance à une implémentation concrète
+# À éviter : dépendance à une implémentation concrète
 class PaymentProcessor:
     def process(self, payment):
         stripe = Stripe()  # Couplage fort
         stripe.charge(payment)
 
-# ✅ Bon : dépendance à une abstraction
+# Bon : dépendance à une abstraction
 class PaymentProcessor:
     def __init__(self, payment_gateway):
         self.payment_gateway = payment_gateway  # Interface
@@ -87,7 +87,7 @@ class PaymentProcessor:
 ### 2. Favoriser la composition sur l'héritage
 
 ```python
-# ❌ Mauvais : héritage rigide
+# À éviter : héritage rigide
 class Duck:
     def quack(self): pass
     def fly(self): pass
@@ -96,7 +96,7 @@ class RubberDuck(Duck):
     def fly(self):
         raise Exception("Rubber ducks can't fly!")  # Violation LSP
 
-# ✅ Bon : composition flexible
+# Bon : composition flexible
 class Duck:
     def __init__(self, quack_behavior, fly_behavior):
         self.quack_behavior = quack_behavior
@@ -112,7 +112,7 @@ class Duck:
 ### 3. Encapsuler ce qui varie
 
 ```python
-# ❌ Mauvais : logique conditionnelle répétée
+# À éviter : logique conditionnelle répétée
 class Order:
     def calculate_shipping(self, country):
         if country == "FR":
@@ -123,7 +123,7 @@ class Order:
             return 15.0
         # ...
 
-# ✅ Bon : stratégie encapsulée
+# Bon : stratégie encapsulée
 class ShippingStrategy:
     def calculate(self): pass
 
@@ -141,14 +141,14 @@ class Order:
 
 ## Quand utiliser un Design Pattern ?
 
-### ✅ Utilisez un pattern quand :
+### Utilisez un pattern quand :
 
 1. **Vous avez un problème récurrent** : Le pattern résout exactement votre problème
 2. **La complexité est justifiée** : Le pattern simplifie réellement votre code
 3. **L'équipe connaît le pattern** : Tout le monde comprend la solution
 4. **Vous avez besoin de flexibilité** : Le pattern facilite les changements futurs
 
-### ❌ N'utilisez PAS un pattern quand :
+### N'utilisez PAS un pattern quand :
 
 1. **Le problème est simple** : Une solution directe suffit
 2. **Vous ne comprenez pas le pattern** : Apprenez d'abord, utilisez ensuite
@@ -195,7 +195,7 @@ print(logger1 is logger2)  # True - même instance
 Un objet qui fait trop de choses.
 
 ```python
-# ❌ Mauvais
+# À éviter
 class Application:
     def handle_user_input(self): pass
     def process_payment(self): pass

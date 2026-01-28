@@ -99,19 +99,19 @@ class OrderObserver(ABC):
 class EmailNotifier(OrderObserver):
     def notify(self, event: str, data: Dict):
         if event == "order_placed":
-            print(f"📧 Email: Order #{data['order_id']} placed successfully!")
+            print(f"[EMAIL] Order #{data['order_id']} placed successfully!")
         elif event == "order_shipped":
-            print(f"📧 Email: Order #{data['order_id']} has been shipped!")
+            print(f"[EMAIL] Order #{data['order_id']} has been shipped!")
 
 class SMSNotifier(OrderObserver):
     def notify(self, event: str, data: Dict):
         if event == "order_placed":
-            print(f"📱 SMS: Your order #{data['order_id']} is confirmed!")
+            print(f"[SMS] Your order #{data['order_id']} is confirmed!")
 
 class InventoryManager(OrderObserver):
     def notify(self, event: str, data: Dict):
         if event == "order_placed":
-            print(f"📦 Inventory: Updating stock for order #{data['order_id']}")
+            print(f"[INVENTORY] Updating stock for order #{data['order_id']}")
 
 # ========== COMMAND : Traitement des commandes ==========
 

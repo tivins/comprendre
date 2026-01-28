@@ -198,7 +198,7 @@ emitter.emit(Event("order:placed", {"amount": 100.0}))
 
 ### Quand utiliser Observer ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - Un changement d'état nécessite de mettre à jour plusieurs objets
 - Vous voulez découpler l'émetteur et les récepteurs
 - Vous avez besoin d'un système d'événements
@@ -396,7 +396,7 @@ print(f"Quick sort: {sorted_data}")
 
 ### Quand utiliser Strategy ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - Vous avez plusieurs algorithmes interchangeables
 - Vous voulez éviter des conditions multiples (if/else)
 - Vous voulez isoler la logique algorithmique du code métier
@@ -660,7 +660,7 @@ queue.stop()
 
 ### Quand utiliser Command ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - Vous voulez paramétrer des objets avec des actions
 - Vous avez besoin d'annulation/refaire (undo/redo)
 - Vous voulez mettre en file d'attente des opérations
@@ -854,7 +854,7 @@ for code, message in errors:
 
 ### Quand utiliser Chain of Responsibility ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - Plusieurs objets peuvent traiter une requête
 - Vous voulez spécifier les handlers dynamiquement
 - Vous voulez éviter de coupler l'émetteur aux récepteurs
@@ -1080,7 +1080,7 @@ order2.ship()  # Cannot ship: order is cancelled
 
 ### Quand utiliser State ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - Un objet a des comportements différents selon son état
 - Vous avez beaucoup de conditions basées sur l'état
 - Les transitions d'état sont bien définies

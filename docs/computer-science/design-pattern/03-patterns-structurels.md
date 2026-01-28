@@ -114,7 +114,7 @@ process_order(paypal_adapter, 100.0)
 
 ### Quand utiliser Adapter ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - Vous voulez utiliser une classe existante dont l'interface ne correspond pas
 - Vous intégrez des bibliothèques tierces
 - Vous voulez réutiliser du code legacy
@@ -327,12 +327,12 @@ print(f"Valid: {is_valid}, Error: {error}")  # Valid: True, Error:
 
 ### Quand utiliser Decorator ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - Vous voulez ajouter des fonctionnalités dynamiquement
 - L'héritage n'est pas approprié (trop de combinaisons possibles)
 - Vous voulez respecter le principe Open/Closed
 
-❌ **Évitez-le quand** :
+**Évitez-le quand** :
 - Les fonctionnalités sont fixes et connues à l'avance
 - Vous pouvez utiliser l'héritage simple
 
@@ -459,7 +459,7 @@ social_media.create_and_share_post(user_id, "Hello, world!")
 
 ### Quand utiliser Facade ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - Vous voulez simplifier l'utilisation d'un sous-système complexe
 - Vous voulez découpler le client du sous-système
 - Vous voulez créer une couche d'abstraction
@@ -647,7 +647,7 @@ print(f"Time: {time.time() - start:.2f}s")
 
 ### Quand utiliser Proxy ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - Vous voulez un chargement paresseux (lazy loading)
 - Vous avez besoin de contrôle d'accès
 - Vous voulez mettre en cache des résultats
@@ -688,7 +688,7 @@ class File(FileSystemComponent):
         return self.size
     
     def display(self, indent: str = ""):
-        print(f"{indent}📄 {self.name} ({self.size} bytes)")
+        print(f"{indent}[FILE] {self.name} ({self.size} bytes)")
 
 class Folder(FileSystemComponent):
     def __init__(self, name: str):
@@ -708,7 +708,7 @@ class Folder(FileSystemComponent):
         return total
     
     def display(self, indent: str = ""):
-        print(f"{indent}📁 {self.name} ({self.get_size()} bytes)")
+        print(f"{indent}[DIR] {self.name} ({self.get_size()} bytes)")
         for child in self.children:
             child.display(indent + "  ")
 
@@ -767,7 +767,7 @@ class Menu(MenuComponent):
         self.children.append(component)
     
     def render(self, indent: str = ""):
-        print(f"{indent}📋 {self.name}")
+        print(f"{indent}[MENU] {self.name}")
         for child in self.children:
             child.render(indent + "  ")
     
@@ -797,7 +797,7 @@ main_menu.render()
 
 ### Quand utiliser Composite ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - Vous avez une structure hiérarchique d'objets
 - Vous voulez traiter uniformément les objets individuels et les groupes
 - Vous avez des structures arborescentes

@@ -13,7 +13,7 @@ Une **responsabilité** est une raison de changer. Si une classe a plusieurs rai
 ### Exemple de responsabilités multiples
 
 ```php
-// ❌ Violation du SRP : Trois responsabilités
+// À éviter : Violation du SRP - Trois responsabilités
 class User {
     // Responsabilité 1 : Gestion des données utilisateur
     private $name;
@@ -46,7 +46,7 @@ class User {
 ## Solution : Séparer les responsabilités
 
 ```php
-// ✅ Respect du SRP : Une responsabilité par classe
+// Bon : Respect du SRP - Une responsabilité par classe
 
 // Responsabilité 1 : Représentation des données utilisateur
 class User {
@@ -105,7 +105,7 @@ class EmailService {
 ### Exemple 1 : Gestionnaire de commandes
 
 ```php
-// ❌ Violation : La classe fait trop de choses
+// À éviter : La classe fait trop de choses
 class Order {
     private $items;
     private $total;
@@ -131,7 +131,7 @@ class Order {
     }
 }
 
-// ✅ Respect : Séparation des responsabilités
+// Bon : Séparation des responsabilités
 class Order {
     private $items;
     private $total;
@@ -173,7 +173,7 @@ class ReceiptPrinter {
 ### Exemple 2 : Validation et transformation
 
 ```php
-// ❌ Violation : Validation ET transformation
+// À éviter : Validation ET transformation
 class UserDataProcessor {
     public function process(array $data): User {
         // Validation
@@ -193,7 +193,7 @@ class UserDataProcessor {
     }
 }
 
-// ✅ Respect : Séparation validation/transformation
+// Bon : Séparation validation/transformation
 class UserValidator {
     public function validate(array $data): void {
         if (empty($data['email'])) {
@@ -225,7 +225,7 @@ $user = $factory->createFromArray($data);
 ### Exemple 3 : Rapport et formatage
 
 ```php
-// ❌ Violation : Génération ET formatage
+// À éviter : Génération ET formatage
 class ReportGenerator {
     public function generate(array $data): string {
         // Collecte des données
@@ -251,7 +251,7 @@ class ReportGenerator {
     }
 }
 
-// ✅ Respect : Séparation génération/formatage
+// Bon : Séparation génération/formatage
 class ReportDataCollector {
     public function collect(array $data): array {
         $report = [];
@@ -298,7 +298,7 @@ $output = $formatter->format($data);
 Le SRP s'applique aussi aux méthodes. Une méthode devrait faire une seule chose.
 
 ```php
-// ❌ Violation : La méthode fait plusieurs choses
+// À éviter : La méthode fait plusieurs choses
 public function processOrder(Order $order) {
     // 1. Valider
     if (!$order->isValid()) {
@@ -318,7 +318,7 @@ public function processOrder(Order $order) {
     $this->logger->info("Order processed");
 }
 
-// ✅ Respect : Méthode orchestratrice qui délègue
+// Bon : Méthode orchestratrice qui délègue
 public function processOrder(Order $order): void {
     $this->validateOrder($order);
     $this->saveOrder($order);
@@ -358,14 +358,14 @@ private function logOrder(Order $order): void {
 ### 1. Sur-séparation
 
 ```php
-// ❌ Trop de classes pour une responsabilité simple
+// À éviter : Trop de classes pour une responsabilité simple
 class UserNameGetter {
     public function getName(User $user): string {
         return $user->getName();
     }
 }
 
-// ✅ Inutile, User peut avoir getName() directement
+// Bon : Inutile, User peut avoir getName() directement
 class User {
     public function getName(): string {
         return $this->name;
@@ -376,7 +376,7 @@ class User {
 ### 2. Confusion responsabilité / méthode
 
 ```php
-// ✅ OK : Une classe peut avoir plusieurs méthodes
+// Bon : Une classe peut avoir plusieurs méthodes
 class User {
     public function getName(): string { }
     public function getEmail(): string { }

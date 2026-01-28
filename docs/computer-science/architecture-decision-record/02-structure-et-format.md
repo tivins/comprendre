@@ -66,10 +66,10 @@ Un ADR suit généralement une structure simple et cohérente. Il existe plusieu
 - Utiliser des verbes d'action quand possible
 
 **Exemples** :
-- ✅ `ADR-001 : Utiliser React pour le frontend`
-- ✅ `ADR-002 : Adopter PostgreSQL comme base de données principale`
-- ❌ `ADR-001 : Décision sur le framework` (trop vague)
-- ❌ `ADR-001 : React` (pas assez descriptif)
+- Bon : `ADR-001 : Utiliser React pour le frontend`
+- Bon : `ADR-002 : Adopter PostgreSQL comme base de données principale`
+- À éviter : `ADR-001 : Décision sur le framework` (trop vague)
+- À éviter : `ADR-001 : React` (pas assez descriptif)
 
 ### 2. Statut
 
@@ -365,7 +365,7 @@ réévaluerons Aurora quand nous aurons besoin de plus de scalabilité.
 
 ### 1. Être concis mais complet
 
-**❌ Trop court** :
+**À éviter : Trop court** :
 ```markdown
 ## Contexte
 On a besoin d'une nouvelle DB.
@@ -374,7 +374,7 @@ On a besoin d'une nouvelle DB.
 PostgreSQL.
 ```
 
-**✅ Bon** :
+**Bon** :
 ```markdown
 ## Contexte
 MySQL 5.7 atteint sa fin de vie. Nous devons migrer vers une nouvelle version.

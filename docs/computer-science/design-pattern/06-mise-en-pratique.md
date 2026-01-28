@@ -15,11 +15,11 @@ Ce guide vous aidera à identifier quand utiliser un design pattern et comment l
 
 Avant d'appliquer un pattern, demandez-vous :
 
-- ✅ Le problème est-il récurrent dans votre codebase ?
-- ✅ Le pattern réduit-il la complexité ou l'augmente-t-il ?
-- ✅ Votre équipe comprendra-t-elle le pattern ?
-- ✅ Le pattern facilite-t-il les tests ?
-- ✅ Le pattern améliore-t-il la maintenabilité ?
+- Le problème est-il récurrent dans votre codebase ?
+- Le pattern réduit-il la complexité ou l'augmente-t-il ?
+- Votre équipe comprendra-t-elle le pattern ?
+- Le pattern facilite-t-il les tests ?
+- Le pattern améliore-t-il la maintenabilité ?
 
 ## Guide de sélection rapide
 
@@ -58,7 +58,7 @@ Avant d'appliquer un pattern, demandez-vous :
 ### Étape 1 : Comprendre le problème
 
 ```python
-# ❌ Code problématique
+# Code problématique (à éviter)
 class PaymentProcessor:
     def process(self, amount, method):
         if method == "credit_card":
@@ -82,7 +82,7 @@ Pour ce cas : **Strategy Pattern** - différents algorithmes de paiement interch
 ### Étape 3 : Refactoriser progressivement
 
 ```python
-# ✅ Solution avec Strategy
+# Solution avec Strategy
 class PaymentStrategy(ABC):
     @abstractmethod
     def pay(self, amount: float):
@@ -113,7 +113,7 @@ def test_payment_processor():
 
 ### 1. Pattern Overuse (Surcharge de patterns)
 
-❌ **Mauvais** : Utiliser un pattern pour un problème simple
+**À éviter** : Utiliser un pattern pour un problème simple
 
 ```python
 # Trop complexe pour un cas simple
@@ -125,7 +125,7 @@ class SimpleCalculator:
         return self.strategy.execute(a, b)
 ```
 
-✅ **Bon** : Solution directe
+**Bon** : Solution directe
 
 ```python
 class SimpleCalculator:
@@ -135,7 +135,7 @@ class SimpleCalculator:
 
 ### 2. Golden Hammer (Marteau d'or)
 
-❌ **Mauvais** : Utiliser le même pattern partout
+**À éviter** : Utiliser le même pattern partout
 
 ```python
 # Utiliser Singleton pour tout
@@ -144,11 +144,11 @@ class ProductService(Singleton): pass
 class OrderService(Singleton): pass
 ```
 
-✅ **Bon** : Choisir le pattern approprié pour chaque cas
+**Bon** : Choisir le pattern approprié pour chaque cas
 
 ### 3. Pattern Without Purpose (Pattern sans but)
 
-❌ **Mauvais** : Appliquer un pattern "parce que c'est bien"
+**À éviter** : Appliquer un pattern "parce que c'est bien"
 
 ```python
 # Factory pour créer un seul type d'objet simple
@@ -158,7 +158,7 @@ class UserFactory:
         return User(name)
 ```
 
-✅ **Bon** : Utiliser le pattern seulement si nécessaire
+**Bon** : Utiliser le pattern seulement si nécessaire
 
 ```python
 # Simple et direct
@@ -427,12 +427,12 @@ class UserService:
 
 Les design patterns sont des outils puissants, mais ils doivent être utilisés judicieusement :
 
-✅ **Utilisez-les quand** :
+**Utilisez-les quand** :
 - Ils résolvent un problème réel
 - Ils simplifient votre code
 - Ils améliorent la maintenabilité
 
-❌ **Évitez-les quand** :
+**Évitez-les quand** :
 - Le problème est simple
 - Ils ajoutent de la complexité inutile
 - Vous ne comprenez pas le pattern

@@ -64,13 +64,13 @@ Avant de commencer, posez-vous ces questions :
 ### Application dans le code
 
 ```python
-# ✅ Bon : Utilise le langage ubiquitaire
+# Bon : Utilise le langage ubiquitaire
 class Booking:
     def confirm(self):
         """Confirme la réservation"""
         pass
 
-# ❌ Mauvais : Termes techniques génériques
+# À éviter : Termes techniques génériques
 class ReservationEntity:
     def set_status_to_confirmed(self):
         """Change le statut"""
@@ -252,7 +252,7 @@ class TestBooking:
 **Problème** : Modèle avec seulement des getters/setters, pas de comportement.
 
 ```python
-# ❌ Mauvais : Modèle anémique
+# À éviter : Modèle anémique
 class Order:
     def __init__(self):
         self.status = ""
@@ -264,7 +264,7 @@ class Order:
     def set_total(self, total: float):
         self.total = total
 
-# ✅ Bon : Modèle riche
+# Bon : Modèle riche
 class Order:
     def __init__(self, order_id: str):
         self.order_id = order_id
@@ -287,7 +287,7 @@ class Order:
 **Problème** : Logique métier dans les services applicatifs au lieu du domaine.
 
 ```python
-# ❌ Mauvais : Logique dans le service applicatif
+# À éviter : Logique dans le service applicatif
 class OrderService:
     def confirm_order(self, order_id: str):
         order = self.repository.find(order_id)
@@ -297,7 +297,7 @@ class OrderService:
         order.status = "Confirmed"
         self.repository.save(order)
 
-# ✅ Bon : Logique dans le domaine
+# Bon : Logique dans le domaine
 class OrderService:
     def confirm_order(self, order_id: str):
         order = self.repository.find(order_id)
@@ -310,7 +310,7 @@ class OrderService:
 **Problème** : Agrégat contenant trop d'entités, difficile à maintenir.
 
 ```python
-# ❌ Mauvais : Agrégat trop gros
+# À éviter : Agrégat trop gros
 class Order:
     def __init__(self):
         self.items = []
@@ -320,7 +320,7 @@ class Order:
         self.notifications = []
         # ... trop de responsabilités
 
-# ✅ Bon : Agrégats séparés
+# Bon : Agrégats séparés
 class Order:  # Agrégat principal
     def __init__(self):
         self.items = []

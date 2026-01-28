@@ -42,13 +42,13 @@ Si une classe a plusieurs responsabilités, elle devient fragile. Chaque changem
 
 **Exemple simple** :
 ```php
-// ❌ Violation : La classe fait deux choses
+// À éviter : La classe fait deux choses
 class User {
     public function save() { /* sauvegarde en BDD */ }
     public function sendEmail() { /* envoie un email */ }
 }
 
-// ✅ Respect : Séparation des responsabilités
+// Bon : Séparation des responsabilités
 class User {
     public function save() { /* sauvegarde en BDD */ }
 }
@@ -64,7 +64,7 @@ Vous devriez pouvoir ajouter de nouvelles fonctionnalités sans modifier le code
 
 **Exemple simple** :
 ```php
-// ❌ Violation : Modification nécessaire pour ajouter un type
+// À éviter : Modification nécessaire pour ajouter un type
 class AreaCalculator {
     public function calculate($shape) {
         if ($shape instanceof Circle) {
@@ -77,7 +77,7 @@ class AreaCalculator {
     }
 }
 
-// ✅ Respect : Extension sans modification
+// Bon : Extension sans modification
 interface Shape {
     public function area();
 }
@@ -97,7 +97,7 @@ Si vous avez une classe `B` qui hérite de `A`, vous devriez pouvoir utiliser `B
 
 **Exemple simple** :
 ```php
-// ❌ Violation : Rectangle et Square ne sont pas substituables
+// À éviter : Rectangle et Square ne sont pas substituables
 class Rectangle {
     public function setWidth($w) { $this->width = $w; }
     public function setHeight($h) { $this->height = $h; }
@@ -109,7 +109,7 @@ class Square extends Rectangle {
     }
 }
 
-// ✅ Respect : Comportement cohérent
+// Bon : Comportement cohérent
 interface Shape {
     public function area();
 }
@@ -128,7 +128,7 @@ Mieux vaut plusieurs interfaces spécifiques qu'une seule interface générale.
 
 **Exemple simple** :
 ```php
-// ❌ Violation : Interface trop large
+// À éviter : Interface trop large
 interface Worker {
     public function work();
     public function eat();
@@ -140,7 +140,7 @@ class Robot implements Worker {
     public function sleep() { /* Robot ne dort pas ! */ }
 }
 
-// ✅ Respect : Interfaces séparées
+// Bon : Interfaces séparées
 interface Workable {
     public function work();
 }
@@ -163,7 +163,7 @@ Les modules de haut niveau ne devraient pas dépendre des modules de bas niveau.
 
 **Exemple simple** :
 ```php
-// ❌ Violation : Dépendance directe à MySQL
+// À éviter : Dépendance directe à MySQL
 class UserRepository {
     private $mysql;
     public function __construct() {
@@ -171,7 +171,7 @@ class UserRepository {
     }
 }
 
-// ✅ Respect : Dépendance à une abstraction
+// Bon : Dépendance à une abstraction
 interface DatabaseConnection {
     public function query($sql);
 }
@@ -221,7 +221,7 @@ class OrderService {
 
 ## Quand appliquer SOLID ?
 
-### ✅ Appliquez SOLID quand :
+### Appliquez SOLID quand :
 
 - Vous développez un projet qui évoluera dans le temps
 - Plusieurs développeurs travaillent sur le même code
@@ -229,7 +229,7 @@ class OrderService {
 - Vous voulez réutiliser des composants
 - La maintenabilité est importante
 
-### ⚠️ Attention à ne pas :
+### Attention à ne pas :
 
 - **Sur-appliquer** : Un script simple de 50 lignes n'a pas besoin de SOLID
 - **Complexifier** : SOLID doit simplifier, pas compliquer

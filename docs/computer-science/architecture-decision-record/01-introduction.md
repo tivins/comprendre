@@ -84,7 +84,7 @@ Action : Créer ADR #45 qui remplace ADR #7, migrer vers le cloud.
 
 ## Quand créer un ADR ?
 
-### ✅ Créer un ADR pour...
+### Créer un ADR pour...
 
 #### Décisions technologiques majeures
 - Choix d'un framework ou langage principal
@@ -142,7 +142,7 @@ Performance : Amélioration attendue de 50% sur les temps de réponse
 → ADR nécessaire
 ```
 
-### ❌ Ne pas créer un ADR pour...
+### Ne pas créer un ADR pour...
 
 #### Décisions triviales
 - Choix d'une bibliothèque utilitaire mineure
@@ -189,7 +189,7 @@ Documente qu'une décision précédente est remplacée par une nouvelle.
 
 ## Avantages et inconvénients
 
-### ✅ Avantages
+### Avantages
 
 1. **Traçabilité** : Comprendre l'historique des décisions
 2. **Communication** : Partager le contexte avec toute l'équipe
@@ -197,7 +197,7 @@ Documente qu'une décision précédente est remplacée par une nouvelle.
 4. **Onboarding** : Accélérer l'intégration des nouveaux développeurs
 5. **Révision** : Faciliter la révision des décisions obsolètes
 
-### ⚠️ Inconvénients à éviter
+### Inconvénients à éviter
 
 1. **Surcharge** : Créer trop d'ADR pour des décisions mineures
 2. **Maintenance** : Les ADR doivent être maintenus à jour

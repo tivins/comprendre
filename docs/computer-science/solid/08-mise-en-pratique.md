@@ -16,7 +16,7 @@ Ne cherchez pas à appliquer tous les principes SOLID d'un coup. Procédez par �
 
 ### Quand appliquer SOLID ?
 
-#### ✅ Appliquez SOLID quand :
+#### Appliquez SOLID quand :
 
 - Vous développez une nouvelle fonctionnalité
 - Vous refactorisez du code existant
@@ -24,7 +24,7 @@ Ne cherchez pas à appliquer tous les principes SOLID d'un coup. Procédez par �
 - Le code devient difficile à maintenir
 - Plusieurs développeurs travaillent sur le même code
 
-#### ⚠️ Attention à ne pas :
+#### Attention à ne pas :
 
 - Sur-appliquer sur du code simple (scripts, prototypes)
 - Complexifier inutilement
@@ -38,7 +38,7 @@ Ne cherchez pas à appliquer tous les principes SOLID d'un coup. Procédez par �
 #### Signes de violation du SRP
 
 ```php
-// ❌ Signes à repérer :
+// Signes à repérer (à éviter) :
 class User {
     public function save() { }           // Persistance
     public function sendEmail() { }      // Communication
@@ -53,7 +53,7 @@ class User {
 #### Signes de violation de l'OCP
 
 ```php
-// ❌ Signes à repérer :
+// Signes à repérer (à éviter) :
 public function process($type) {
     if ($type === 'A') { }
     elseif ($type === 'B') { }
@@ -67,10 +67,10 @@ public function process($type) {
 #### Signes de violation du LSP
 
 ```php
-// ❌ Signes à repérer :
+// Signes à repérer (à éviter) :
 class Child extends Parent {
     public function method() {
-        throw new Exception("Not implemented"); // ⚠️
+        throw new Exception("Not implemented");
     }
 }
 ```
@@ -80,12 +80,12 @@ class Child extends Parent {
 #### Signes de violation de l'ISP
 
 ```php
-// ❌ Signes à repérer :
+// Signes à repérer (à éviter) :
 class Class implements LargeInterface {
     public function method1() { }
     public function method2() { }
-    public function method3() { } // ⚠️ Méthode vide ou avec exception
-    public function method4() { } // ⚠️ Méthode vide ou avec exception
+    public function method3() { } // Méthode vide ou avec exception
+    public function method4() { } // Méthode vide ou avec exception
 }
 ```
 
@@ -94,10 +94,10 @@ class Class implements LargeInterface {
 #### Signes de violation du DIP
 
 ```php
-// ❌ Signes à repérer :
+// Signes à repérer (à éviter) :
 class Service {
     public function __construct() {
-        $this->db = new MySQL(); // ⚠️ Instanciation directe
+        $this->db = new MySQL(); // Instanciation directe
     }
 }
 ```
@@ -250,7 +250,7 @@ Détecte certaines violations de SOLID :
 // PHPStan détectera cette violation du DIP
 class Service {
     public function __construct() {
-        $this->db = new MySQL(); // ⚠️ Détecté
+        $this->db = new MySQL(); // Détecté
     }
 }
 ```
@@ -368,9 +368,9 @@ class Invoice {
 ```
 
 **Violations identifiées** :
-- ❌ SRP : Calcul, persistance, email, PDF
-- ❌ OCP : Modification nécessaire pour nouveaux types de clients
-- ❌ DIP : Dépendances directes à PDO, PHPMailer, TCPDF
+- SRP violé : Calcul, persistance, email, PDF
+- OCP violé : Modification nécessaire pour nouveaux types de clients
+- DIP violé : Dépendances directes à PDO, PHPMailer, TCPDF
 
 **Refactoring étape par étape** :
 
@@ -498,7 +498,7 @@ class InvoiceEmailService {
 ### 1. Sur-abstraction
 
 ```php
-// ❌ Trop d'abstraction pour un cas simple
+// À éviter : Trop d'abstraction pour un cas simple
 interface SimpleCalculator {
     public function add(int $a, int $b): int;
 }

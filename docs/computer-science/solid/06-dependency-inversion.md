@@ -18,12 +18,12 @@ Le principe d'inversion des dépendances (DIP) est le dernier principe SOLID. Il
 ### Le problème sans DIP
 
 ```php
-// ❌ Violation : Dépendance directe aux modules de bas niveau
+// À éviter : Dépendance directe aux modules de bas niveau
 class UserService {
     private $database;
     
     public function __construct() {
-        $this->database = new MySQLDatabase(); // ⚠️ Couplage fort
+        $this->database = new MySQLDatabase(); // Couplage fort
     }
     
     public function getUser(int $id): ?User {
@@ -41,7 +41,7 @@ class UserService {
 ## Solution : Inverser les dépendances
 
 ```php
-// ✅ Respect : Dépendance aux abstractions
+// Bon : Dépendance aux abstractions
 interface UserRepository {
     public function findById(int $id): ?User;
     public function save(User $user): void;
@@ -81,7 +81,7 @@ $mysqlRepo = new MySQLUserRepository($pdo);
 $service = new UserService($mysqlRepo);
 
 $postgresRepo = new PostgreSQLUserRepository($connection);
-$service = new UserService($postgresRepo); // ✅ Même service, autre BDD
+$service = new UserService($postgresRepo); // Même service, autre BDD
 ```
 
 ## Exemples détaillés
@@ -89,7 +89,7 @@ $service = new UserService($postgresRepo); // ✅ Même service, autre BDD
 ### Exemple 1 : Système de logging
 
 ```php
-// ❌ Violation : Dépendance directe à l'implémentation
+// À éviter : Dépendance directe à l'implémentation
 class OrderService {
     private $fileLogger;
     
@@ -103,7 +103,7 @@ class OrderService {
     }
 }
 
-// ✅ Respect : Dépendance à l'abstraction
+// Bon : Dépendance à l'abstraction
 interface Logger {
     public function log(string $message): void;
 }
@@ -173,7 +173,7 @@ $orderService = new OrderService($cloudLogger);
 ### Exemple 2 : Système de paiement
 
 ```php
-// ❌ Violation : Dépendance directe aux services de paiement
+// À éviter : Dépendance directe aux services de paiement
 class PaymentService {
     private $stripe;
     
@@ -202,11 +202,11 @@ class PaymentService {
         } elseif ($gateway === 'paypal') {
             return $this->paypal->charge($amount, $token);
         }
-        // ⚠️ Violation de l'OCP : modification nécessaire pour chaque nouveau gateway
+        // Violation de l'OCP : modification nécessaire pour chaque nouveau gateway
     }
 }
 
-// ✅ Respect : Dépendance à l'abstraction
+// Bon : Dépendance à l'abstraction
 interface PaymentGateway {
     public function charge(float $amount, string $token): bool;
     public function refund(string $transactionId, float $amount): bool;
@@ -286,7 +286,7 @@ $paymentService = new PaymentService($squareGateway);
 ### Exemple 3 : Envoi de notifications
 
 ```php
-// ❌ Violation : Dépendance directe aux services de notification
+// À éviter : Dépendance directe aux services de notification
 class NotificationService {
     private $mailer;
     private $smsService;
@@ -305,7 +305,7 @@ class NotificationService {
     }
 }
 
-// ✅ Respect : Dépendance aux abstractions
+// Bon : Dépendance aux abstractions
 interface NotificationChannel {
     public function send(string $to, string $message): bool;
 }
@@ -370,7 +370,7 @@ $notificationService = new NotificationService($smsChannel);
 ### Exemple 4 : Cache
 
 ```php
-// ❌ Violation : Dépendance directe à Redis
+// À éviter : Dépendance directe à Redis
 class ProductService {
     private $redis;
     
@@ -391,7 +391,7 @@ class ProductService {
     }
 }
 
-// ✅ Respect : Dépendance à l'abstraction
+// Bon : Dépendance à l'abstraction
 interface Cache {
     public function get(string $key): mixed;
     public function set(string $key, mixed $value, int $ttl = 3600): bool;

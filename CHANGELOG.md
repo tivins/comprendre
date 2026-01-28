@@ -35,3 +35,8 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
   - Dependency Inversion Principle (DIP)
   - Exemples concrets
   - Guide de mise en pratique
+- Guide pratique d'organisation du code (coding-helper.md)
+  - Questions à se poser lors de la création de classes, méthodes et dossiers
+  - Astuces mnémotechniques pour SOLID et DDD
+  - Checklist rapide avant de créer du code
+  - Guide de réflexion quotidienne pour le développement

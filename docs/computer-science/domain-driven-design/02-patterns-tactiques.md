@@ -71,10 +71,10 @@ if can_borrow.and_specification(is_available).is_satisfied_by(member):
 
 ### Avantages
 
-- ✅ Règles métier réutilisables
-- ✅ Facilement testables
-- ✅ Peuvent être combinées
-- ✅ Code expressif et lisible
+- Règles métier réutilisables
+- Facilement testables
+- Peuvent être combinées
+- Code expressif et lisible
 
 ## 2. Factory Pattern
 
@@ -124,9 +124,9 @@ class OrderFactory:
 
 ### Avantages
 
-- ✅ Encapsule la complexité de création
-- ✅ Garantit la cohérence de l'agrégat
-- ✅ Applique les règles métier à la création
+- Encapsule la complexité de création
+- Garantit la cohérence de l'agrégat
+- Applique les règles métier à la création
 
 ## 3. Domain Events
 
@@ -202,10 +202,10 @@ class OrderConfirmedHandler:
 
 ### Avantages
 
-- ✅ Découplage entre agrégats
-- ✅ Traçabilité des événements
-- ✅ Facilite l'intégration avec d'autres systèmes
-- ✅ Supporte l'Event Sourcing
+- Découplage entre agrégats
+- Traçabilité des événements
+- Facilite l'intégration avec d'autres systèmes
+- Supporte l'Event Sourcing
 
 ## 4. Aggregate Root Pattern
 
@@ -291,9 +291,9 @@ class CartItem:  # Entité interne
 
 ### Règles importantes
 
-- ✅ Seul l'agrégat racine peut être référencé depuis l'extérieur
-- ✅ Les objets internes ne sont accessibles que via l'agrégat racine
-- ✅ L'agrégat garantit l'intégrité et la cohérence
+- Seul l'agrégat racine peut être référencé depuis l'extérieur
+- Les objets internes ne sont accessibles que via l'agrégat racine
+- L'agrégat garantit l'intégrité et la cohérence
 
 ## 5. Bounded Context Pattern
 

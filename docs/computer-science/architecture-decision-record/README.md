@@ -51,18 +51,18 @@ Les ADR sont le "journal de bord" de votre projet logiciel.
 ### Quand créer un ADR ?
 
 Créez un ADR pour :
-- ✅ Choix de technologies (framework, base de données, langage)
-- ✅ Patterns architecturaux (microservices, monolithe, event-driven)
-- ✅ Décisions de sécurité (authentification, autorisation)
-- ✅ Décisions de performance (caching, optimisation)
-- ✅ Décisions d'intégration (APIs, protocoles)
-- ✅ Décisions organisationnelles importantes (équipes, processus)
+- Choix de technologies (framework, base de données, langage)
+- Patterns architecturaux (microservices, monolithe, event-driven)
+- Décisions de sécurité (authentification, autorisation)
+- Décisions de performance (caching, optimisation)
+- Décisions d'intégration (APIs, protocoles)
+- Décisions organisationnelles importantes (équipes, processus)
 
 Ne créez **pas** un ADR pour :
-- ❌ Décisions triviales ou évidentes
-- ❌ Décisions temporaires ou expérimentales
-- ❌ Décisions purement fonctionnelles (features)
-- ❌ Décisions de style de code (formatage, conventions mineures)
+- Décisions triviales ou évidentes
+- Décisions temporaires ou expérimentales
+- Décisions purement fonctionnelles (features)
+- Décisions de style de code (formatage, conventions mineures)
 
 ## Pour qui ?
 

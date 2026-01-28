@@ -95,12 +95,12 @@ print(len(logger.get_logs()))  # 2 - même instance
 
 ### Quand utiliser Singleton ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - Vous avez besoin d'exactement une instance d'une classe
 - Cette instance doit être accessible globalement
 - L'instance doit être initialisée à la première utilisation
 
-❌ **Évitez-le quand** :
+**Évitez-le quand** :
 - Vous pouvez utiliser une dépendance injectée
 - Vous avez besoin de plusieurs instances avec des configurations différentes
 - Vous testez votre code (difficile à mocker)
@@ -218,7 +218,7 @@ processor.process_payment(100.0)
 
 ### Quand utiliser Factory Method ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - Vous ne connaissez pas à l'avance les types exacts d'objets à créer
 - Vous voulez permettre aux sous-classes de spécifier les objets à créer
 - Vous voulez découpler le code de création du code métier
@@ -574,12 +574,12 @@ print(margherita)
 
 ### Quand utiliser Builder ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - Vous avez des objets avec de nombreux paramètres optionnels
 - Vous voulez créer différentes représentations du même objet
 - Vous voulez que la construction soit lisible et fluide
 
-❌ **Évitez-le quand** :
+**Évitez-le quand** :
 - L'objet est simple avec peu de paramètres
 - Vous avez besoin d'immutabilité (utilisez plutôt des objets valeur)
 
@@ -712,12 +712,12 @@ print(prod_config)
 
 ### Quand utiliser Prototype ?
 
-✅ **Utilisez-le quand** :
+**Utilisez-le quand** :
 - La création d'objets est coûteuse (requêtes DB, calculs complexes)
 - Vous avez besoin de nombreuses variantes d'un objet
 - Vous voulez éviter une hiérarchie de classes complexe
 
-❌ **Évitez-le quand** :
+**Évitez-le quand** :
 - Les objets sont simples à créer
 - Vous avez peu d'instances à créer
 

@@ -24,7 +24,7 @@ Imaginez une télécommande universelle avec 100 boutons :
 ### Problèmes sans ISP
 
 ```php
-// ❌ Violation : Interface trop large
+// À éviter : Interface trop large
 interface Worker {
     public function work(): void;
     public function eat(): void;
@@ -51,12 +51,12 @@ class Robot implements Worker {
     }
     
     public function eat(): void {
-        // ⚠️ Robot ne mange pas ! Obligé d'implémenter une méthode inutile
+        // Robot ne mange pas ! Obligé d'implémenter une méthode inutile
         throw new Exception("Robots don't eat");
     }
     
     public function sleep(): void {
-        // ⚠️ Robot ne dort pas ! Obligé d'implémenter une méthode inutile
+        // Robot ne dort pas ! Obligé d'implémenter une méthode inutile
         throw new Exception("Robots don't sleep");
     }
 }
@@ -71,7 +71,7 @@ class Robot implements Worker {
 ## Solution : Interfaces séparées
 
 ```php
-// ✅ Respect : Interfaces spécifiques
+// Bon : Interfaces spécifiques
 interface Workable {
     public function work(): void;
 }
@@ -122,7 +122,7 @@ class Cat implements Eatable, Sleepable {
 ### Exemple 1 : Gestion de documents
 
 ```php
-// ❌ Violation : Interface trop large
+// À éviter : Interface trop large
 interface Document {
     public function open(): void;
     public function save(): void;
@@ -137,7 +137,7 @@ class TextDocument implements Document {
     public function print(): void { }
     public function email(): void { }
     public function fax(): void {
-        // ⚠️ Les documents texte ne peuvent pas être faxés
+        // Les documents texte ne peuvent pas être faxés
         throw new Exception("Text documents cannot be faxed");
     }
 }
@@ -145,7 +145,7 @@ class TextDocument implements Document {
 class ReadOnlyDocument implements Document {
     public function open(): void { }
     public function save(): void {
-        // ⚠️ Document en lecture seule
+        // Document en lecture seule
         throw new Exception("Cannot save read-only document");
     }
     public function print(): void { }
@@ -153,7 +153,7 @@ class ReadOnlyDocument implements Document {
     public function fax(): void { }
 }
 
-// ✅ Respect : Interfaces séparées
+// Bon : Interfaces séparées
 interface Openable {
     public function open(): void;
 }
@@ -197,7 +197,7 @@ class FaxDocument implements Openable, Faxable {
 ### Exemple 2 : Système de paiement
 
 ```php
-// ❌ Violation : Interface unique pour tous les types de paiement
+// À éviter : Interface unique pour tous les types de paiement
 interface PaymentMethod {
     public function authorize(float $amount): bool;
     public function capture(float $amount): bool;
@@ -212,26 +212,26 @@ class CreditCardPayment implements PaymentMethod {
     public function refund(float $amount): bool { return true; }
     public function void(float $amount): bool { return true; }
     public function getBalance(): float {
-        // ⚠️ Les cartes de crédit n'ont pas de "balance" comme un compte
+        // Les cartes de crédit n'ont pas de "balance" comme un compte
         throw new Exception("Credit cards don't have balance");
     }
 }
 
 class BankAccountPayment implements PaymentMethod {
     public function authorize(float $amount): bool {
-        // ⚠️ Les comptes bancaires n'ont pas besoin d'autorisation
+        // Les comptes bancaires n'ont pas besoin d'autorisation
         throw new Exception("Bank accounts don't need authorization");
     }
     public function capture(float $amount): bool { return true; }
     public function refund(float $amount): bool { return true; }
     public function void(float $amount): bool {
-        // ⚠️ Pas applicable aux comptes bancaires
+        // Pas applicable aux comptes bancaires
         throw new Exception("Cannot void bank account payment");
     }
     public function getBalance(): float { return 1000.0; }
 }
 
-// ✅ Respect : Interfaces séparées par capacité
+// Bon : Interfaces séparées par capacité
 interface Authorizable {
     public function authorize(float $amount): bool;
 }
@@ -274,7 +274,7 @@ class CashPayment implements Capturable {
 ### Exemple 3 : Système de configuration
 
 ```php
-// ❌ Violation : Interface unique pour toutes les sources de configuration
+// À éviter : Interface unique pour toutes les sources de configuration
 interface ConfigSource {
     public function get(string $key): mixed;
     public function set(string $key, mixed $value): void;
@@ -290,12 +290,12 @@ class EnvironmentConfig implements ConfigSource {
     }
     
     public function set(string $key, mixed $value): void {
-        // ⚠️ On ne peut pas modifier les variables d'environnement
+        // On ne peut pas modifier les variables d'environnement
         throw new Exception("Cannot set environment variables");
     }
     
     public function delete(string $key): void {
-        // ⚠️ On ne peut pas supprimer les variables d'environnement
+        // On ne peut pas supprimer les variables d'environnement
         throw new Exception("Cannot delete environment variables");
     }
     
@@ -308,12 +308,12 @@ class EnvironmentConfig implements ConfigSource {
     }
     
     public function save(): void {
-        // ⚠️ Pas de sauvegarde pour les variables d'environnement
+        // Pas de sauvegarde pour les variables d'environnement
         throw new Exception("Cannot save environment variables");
     }
 }
 
-// ✅ Respect : Interfaces séparées
+// Bon : Interfaces séparées
 interface ReadableConfig {
     public function get(string $key): mixed;
     public function exists(string $key): bool;
@@ -375,7 +375,7 @@ class FileConfig implements ReadableConfig, WritableConfig, PersistableConfig {
 ### Exemple 4 : Système de notifications
 
 ```php
-// ❌ Violation : Interface unique pour tous les canaux
+// À éviter : Interface unique pour tous les canaux
 interface NotificationChannel {
     public function send(string $message): void;
     public function sendWithAttachment(string $message, string $file): void;
@@ -388,7 +388,7 @@ class EmailChannel implements NotificationChannel {
     public function sendWithAttachment(string $message, string $file): void { }
     public function sendBulk(array $messages): void { }
     public function getDeliveryStatus(string $messageId): string {
-        // ⚠️ Les emails peuvent avoir un statut
+        // Les emails peuvent avoir un statut
         return 'delivered';
     }
 }
@@ -396,12 +396,12 @@ class EmailChannel implements NotificationChannel {
 class SMSSChannel implements NotificationChannel {
     public function send(string $message): void { }
     public function sendWithAttachment(string $message, string $file): void {
-        // ⚠️ Les SMS ne supportent pas les pièces jointes
+        // Les SMS ne supportent pas les pièces jointes
         throw new Exception("SMS does not support attachments");
     }
     public function sendBulk(array $messages): void { }
     public function getDeliveryStatus(string $messageId): string {
-        // ⚠️ Les SMS peuvent avoir un statut
+        // Les SMS peuvent avoir un statut
         return 'sent';
     }
 }
@@ -409,20 +409,20 @@ class SMSSChannel implements NotificationChannel {
 class PushNotificationChannel implements NotificationChannel {
     public function send(string $message): void { }
     public function sendWithAttachment(string $message, string $file): void {
-        // ⚠️ Les notifications push peuvent avoir des images mais pas de fichiers
+        // Les notifications push peuvent avoir des images mais pas de fichiers
         throw new Exception("Push notifications don't support file attachments");
     }
     public function sendBulk(array $messages): void {
-        // ⚠️ Les notifications push ne supportent pas le bulk
+        // Les notifications push ne supportent pas le bulk
         throw new Exception("Push notifications don't support bulk sending");
     }
     public function getDeliveryStatus(string $messageId): string {
-        // ⚠️ Pas de statut de livraison pour les push
+        // Pas de statut de livraison pour les push
         throw new Exception("Push notifications don't have delivery status");
     }
 }
 
-// ✅ Respect : Interfaces séparées
+// Bon : Interfaces séparées
 interface Sendable {
     public function send(string $message): void;
 }
@@ -494,7 +494,7 @@ interface MinimalInterface {
 ### 1. Sur-ségrégation
 
 ```php
-// ❌ Trop de petites interfaces
+// À éviter : Trop de petites interfaces
 interface GetName {
     public function getName(): string;
 }
@@ -505,7 +505,7 @@ interface GetAge {
     public function getAge(): int;
 }
 
-// ✅ Une interface cohérente pour les données utilisateur
+// Bon : Une interface cohérente pour les données utilisateur
 interface UserData {
     public function getName(): string;
     public function getEmail(): string;

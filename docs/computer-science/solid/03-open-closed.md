@@ -25,7 +25,7 @@ Imaginez une prise électrique :
 ### Problèmes sans OCP
 
 ```php
-// ❌ Violation : Modification nécessaire pour chaque nouveau type
+// À éviter : Modification nécessaire pour chaque nouveau type
 class AreaCalculator {
     public function calculate($shape) {
         if ($shape instanceof Circle) {
@@ -51,7 +51,7 @@ class AreaCalculator {
 ## Solution : Utiliser l'abstraction
 
 ```php
-// ✅ Respect : Extension sans modification
+// Bon : Extension sans modification
 interface Shape {
     public function area(): float;
 }
@@ -220,7 +220,7 @@ class SeasonalDiscount implements DiscountStrategy {
 ### Exemple 1 : Filtrage de produits
 
 ```php
-// ❌ Violation : Modification nécessaire pour chaque critère
+// À éviter : Modification nécessaire pour chaque critère
 class ProductFilter {
     public function filterByColor(array $products, string $color): array {
         return array_filter($products, fn($p) => $p->getColor() === $color);
@@ -233,7 +233,7 @@ class ProductFilter {
     // Pour ajouter filterByPrice, il faut modifier cette classe
 }
 
-// ✅ Respect : Extension via interface
+// Bon : Extension via interface
 interface Specification {
     public function isSatisfiedBy(Product $product): bool;
 }
@@ -279,7 +279,7 @@ $cheapProducts = $filter->filter($products, new PriceSpecification(0, 50));
 ### Exemple 2 : Génération de rapports
 
 ```php
-// ❌ Violation : Modification nécessaire pour chaque format
+// À éviter : Modification nécessaire pour chaque format
 class ReportGenerator {
     public function generate(array $data, string $format): string {
         if ($format === 'html') {
@@ -302,7 +302,7 @@ class ReportGenerator {
     }
 }
 
-// ✅ Respect : Extension via interface
+// Bon : Extension via interface
 interface ReportFormatter {
     public function format(array $data): string;
 }
@@ -346,7 +346,7 @@ class XmlFormatter implements ReportFormatter {
 ### Exemple 3 : Validation de données
 
 ```php
-// ❌ Violation : Modification nécessaire pour chaque règle
+// À éviter : Modification nécessaire pour chaque règle
 class UserValidator {
     public function validate(array $data): array {
         $errors = [];
@@ -368,7 +368,7 @@ class UserValidator {
     }
 }
 
-// ✅ Respect : Extension via interface
+// Bon : Extension via interface
 interface ValidationRule {
     public function validate($value): ?string; // Retourne null si valide, message d'erreur sinon
 }
@@ -443,7 +443,7 @@ $validator->addRule('phone', new RegexRule('/^\+33\d{9}$/', 'Invalid phone numbe
 Les structures conditionnelles (`if/else`, `switch`) sont souvent des signes de violation de l'OCP.
 
 ```php
-// ❌ Beaucoup de conditions = violation probable de l'OCP
+// À éviter : Beaucoup de conditions = violation probable de l'OCP
 public function process($type, $data) {
     if ($type === 'A') {
         // ...
@@ -471,7 +471,7 @@ public function process($type, $data) {
 ### 1. Sur-abstraction
 
 ```php
-// ❌ Trop d'abstraction pour un cas simple
+// À éviter : Trop d'abstraction pour un cas simple
 interface SimpleCalculator {
     public function add(int $a, int $b): int;
 }
@@ -486,7 +486,7 @@ Ne créez pas d'abstractions "au cas où". Créez-les quand vous avez besoin d'�
 ### 3. Confondre extension et modification
 
 ```php
-// ❌ Ce n'est pas une extension, c'est une modification
+// À éviter : Ce n'est pas une extension, c'est une modification
 class Calculator {
     public function add(int $a, int $b): int {
         return $a + $b;

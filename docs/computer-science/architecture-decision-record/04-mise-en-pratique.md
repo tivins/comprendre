@@ -22,9 +22,9 @@ Créez un ADR quand vous vous posez une de ces questions :
 
 ### Étape 2 : Rédiger l'ADR pendant la décision
 
-**⚠️ Erreur commune** : Attendre après la décision pour documenter.
+**Erreur commune** : Attendre après la décision pour documenter.
 
-**✅ Bonne pratique** : Rédiger l'ADR **pendant** la discussion de la décision.
+**Bonne pratique** : Rédiger l'ADR **pendant** la discussion de la décision.
 
 **Pourquoi ?**
 - Le contexte est encore frais dans les esprits
@@ -94,10 +94,10 @@ mon-projet/
 - Descriptif mais concis (max 50 caractères)
 
 **Exemples** :
-- ✅ `0001-utiliser-react-frontend.md`
-- ✅ `0015-remplacer-react-par-vue.md`
-- ❌ `ADR-1-react.md` (incohérent)
-- ❌ `001-choix-du-framework-frontend-react.md` (trop long)
+- Bon : `0001-utiliser-react-frontend.md`
+- Bon : `0015-remplacer-react-par-vue.md`
+- À éviter : `ADR-1-react.md` (incohérent)
+- À éviter : `001-choix-du-framework-frontend-react.md` (trop long)
 
 ### Fichier index (README.md)
 
@@ -363,21 +363,21 @@ Créer un script de validation (`scripts/validate-adr.sh`) :
 for file in docs/adr/*.md; do
     if [[ "$file" != "docs/adr/README.md" && "$file" != "docs/adr/template.md" ]]; then
         if ! grep -q "## Statut" "$file"; then
-            echo "❌ $file : Section 'Statut' manquante"
+            echo "ERREUR: $file : Section 'Statut' manquante"
             exit 1
         fi
         if ! grep -q "## Contexte" "$file"; then
-            echo "❌ $file : Section 'Contexte' manquante"
+            echo "ERREUR: $file : Section 'Contexte' manquante"
             exit 1
         fi
         if ! grep -q "## Décision" "$file"; then
-            echo "❌ $file : Section 'Décision' manquante"
+            echo "ERREUR: $file : Section 'Décision' manquante"
             exit 1
         fi
     fi
 done
 
-echo "✅ Tous les ADR sont valides"
+echo "SUCCÈS: Tous les ADR sont valides"
 ```
 
 **Intégrer dans GitHub Actions** :
@@ -403,60 +403,60 @@ jobs:
 
 ### 1. Rester concis
 
-**❌ Trop long** :
+**À éviter : Trop long** :
 - ADR de 10 pages avec tous les détails d'implémentation
 - Répétitions inutiles
 - Informations non pertinentes
 
-**✅ Bon** :
+**Bon** :
 - ADR de 1-2 pages maximum
 - Focus sur le "pourquoi", pas le "comment"
 - Informations essentielles uniquement
 
 ### 2. Être honnête
 
-**❌ Cacher les problèmes** :
+**À éviter : Cacher les problèmes** :
 - Ne documenter que les avantages
 - Ignorer les risques
 - Présenter comme une décision parfaite
 
-**✅ Être transparent** :
+**Bon : Être transparent** :
 - Documenter les avantages ET inconvénients
 - Reconnaître les risques et incertitudes
 - Être honnête sur les compromis
 
 ### 3. Maintenir la cohérence
 
-**❌ Formats différents** :
+**À éviter : Formats différents** :
 - Chaque ADR dans un format différent
 - Numérotation incohérente
 - Tags différents pour des concepts similaires
 
-**✅ Standardiser** :
+**Bon : Standardiser** :
 - Utiliser le même template pour tous
 - Suivre la numérotation séquentielle
 - Utiliser des tags cohérents
 
 ### 4. Rédiger pour l'avenir
 
-**❌ Jargon du moment** :
+**À éviter : Jargon du moment** :
 - "On a choisi React parce que c'est hype"
 - Références à des personnes qui ne seront plus là
 - Contexte implicite
 
-**✅ Clarté durable** :
+**Bon : Clarté durable** :
 - Expliquer le contexte de manière compréhensible dans 2 ans
 - Utiliser des termes standards
 - Documenter les contraintes et exigences
 
 ### 5. Intégrer dans le workflow
 
-**❌ ADR comme corvée** :
+**À éviter : ADR comme corvée** :
 - Créer les ADR après coup
 - Voir ça comme de la bureaucratie
 - Ne pas les utiliser
 
-**✅ ADR comme outil** :
+**Bon : ADR comme outil** :
 - Créer pendant la décision
 - Utiliser pour guider les décisions futures
 - Référencer dans les discussions
