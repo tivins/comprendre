@@ -5,6 +5,16 @@ Tous les changements notables de ce projet seront documentés dans ce fichier.
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
 et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
+## [1.1.0] - 2026-01-30
+
+### Ajouté
+- Documentation complète sur API Platform
+  - Introduction à API Platform (écosystème, REST/GraphQL)
+  - Concepts fondamentaux (ressources, opérations, sérialisation, state providers/processors)
+  - Fonctionnalités avancées (filtres, validation, sécurité, GraphQL, formats, Mercure)
+  - Exemples concrets (API bookshop avec Book et Review)
+  - Mise en pratique (installation Docker et Symfony Flex, bonnes pratiques)
+
 ## [1.0.0] - 2026-01-28
 
 ### Ajouté
