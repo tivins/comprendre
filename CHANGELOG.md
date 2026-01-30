@@ -5,6 +5,15 @@ Tous les changements notables de ce projet seront documentés dans ce fichier.
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
 et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
+## [1.3.0] - 2026-01-30
+
+### Ajouté
+- Documentation complète sur l'injection de dépendances (Dependency Injection)
+  - Introduction (définition, problème sans DI, solution, lien avec le DIP)
+  - Types et mécanismes (injection par constructeur, setter, interface ; conteneurs IoC)
+  - Exemples concrets en pseudo-code Java (service métier, repository, notification, tests)
+  - Mise en pratique (quand l'utiliser, pièges à éviter, intégration SOLID et frameworks)
+
 ## [1.2.0] - 2026-01-30
 
 ### Ajouté

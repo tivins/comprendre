@@ -28,5 +28,6 @@ Style de rédaction :
 * [Architecture Decision Record](computer-science/architecture-decision-record/README.md)<br>documents qui capturent les décisions architecturales importantes prises lors du développement d'un projet logiciel
 * [Design pattern](computer-science/design-pattern/README.md)<br>solutions réutilisables aux problèmes courants rencontrés lors de la conception de logiciels
     * [Design pattern: Decorator](computer-science/design-pattern-decorator/README.md)<br>pattern structurel qui permet d'attacher dynamiquement des responsabilités supplémentaires à un objet.
+* [Dependency Injection (injection de dépendances)](computer-science/dependency-injection/README.md)<br>technique qui consiste à fournir à un objet les dépendances dont il a besoin pour découpler et améliorer la testabilité.
 * [Domain-Driven Design](computer-science/domain-driven-design/README.md)<br>approche de développement logiciel qui place le domaine métier au centre de la conception.
 * [SOLID](computer-science/solid/README.md)<br>cinq principes de conception orientée objet pour un code maintenable et extensible.
