@@ -24,9 +24,9 @@ Style de rédaction :
 
 ### Computer science
   
-* [API Platform](computer-science/api-platform/README.md)
+* [API Platform](computer-science/api-platform/README.md)<br>framework full stack pour créer des APIs REST et GraphQL (Symfony).
 * [Architecture Decision Record](computer-science/architecture-decision-record/README.md)<br>documents qui capturent les décisions architecturales importantes prises lors du développement d'un projet logiciel
 * [Design pattern](computer-science/design-pattern/README.md)<br>solutions réutilisables aux problèmes courants rencontrés lors de la conception de logiciels
     * [Design pattern: Decorator](computer-science/design-pattern-decorator/README.md)<br>pattern structurel qui permet d'attacher dynamiquement des responsabilités supplémentaires à un objet.
 * [Domain-Driven Design](computer-science/domain-driven-design/README.md)<br>approche de développement logiciel qui place le domaine métier au centre de la conception.
-* [SOLID](computer-science/solid/README.md)
+* [SOLID](computer-science/solid/README.md)<br>cinq principes de conception orientée objet pour un code maintenable et extensible.
