@@ -9,7 +9,7 @@ Collection de documentation en français.
 
 ---
 
-> **NB** 
+> [!IMPORTANT]  Disclaimer
 >
 > Les documents ont été générés par des IA. Cependant, ces outils ont été fortement préparés à réaliser des documents compréhensibles utilisant avec des règles précises.
 >
@@ -17,13 +17,18 @@ Collection de documentation en français.
 >
 > Mais, globalement, les informations contenues dans ces documents sont plutôt correctes et permettent de se faire une idée assez réaliste des sujets.
 
+---
 
 Style de rédaction :
 
 * Explications sont claires et concises (pas de distraction).
-* Entrecoupé d'exemples utilisant un pseudo-code inspiré de Java/C++/TypeScript.
+* Entrecoupé d'exemples utilisant un pseudo-code inspiré de Java/C++/PHP/TypeScript.
 * Exemples réalistes, inspirés de cas concrets.
 * Liens vers les ressources officielles.
+
+## Lexique
+
+* [Lexique — Conception et architecture](lexique.md) — définitions courtes : couplage, découplage, responsabilité, dépendance, cohésion, interface/contrat.
 
 ## Sommaire :
 

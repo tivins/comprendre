@@ -8,6 +8,7 @@ et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 ## [1.7.0] - 2026-01-31
 
 ### Ajouté
+- Lexique conception et architecture (`docs/lexique.md`) : couplage, découplage, responsabilité, dépendance, cohésion, interface/contrat — définitions courtes et liens vers les sujets concernés.
 - Documentation sur le bus applicatif (Message Bus)
   - Introduction (définition, analogie avec le bus matériel, rôle dans l’architecture applicative)
   - Concepts fondamentaux (messages, handlers, middleware, enveloppe, routage, synchrone/asynchrone)
