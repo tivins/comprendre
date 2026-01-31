@@ -5,6 +5,16 @@ Tous les changements notables de ce projet seront documentés dans ce fichier.
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
 et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
+## [1.7.0] - 2026-01-31
+
+### Ajouté
+- Documentation sur le bus applicatif (Message Bus)
+  - Introduction (définition, analogie avec le bus matériel, rôle dans l’architecture applicative)
+  - Concepts fondamentaux (messages, handlers, middleware, enveloppe, routage, synchrone/asynchrone)
+  - Types et usage (command bus, event bus, CQRS, intégration DDD)
+  - Exemples concrets en PHP avec DDD (Symfony Messenger, agrégats, commandes et événements)
+  - Mise en pratique (quand introduire un bus, choix d’implémentation, bonnes pratiques, pièges à éviter)
+
 ## [1.6.0] - 2026-01-31
 
 ### Ajouté
