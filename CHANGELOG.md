@@ -5,6 +5,16 @@ Tous les changements notables de ce projet seront documentés dans ce fichier.
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
 et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
+## [1.8.3] - 2026-01-31
+
+### Ajouté
+- Documentation sur les types de tests (computer-science)
+  - Introduction (pourquoi distinguer les types, vocabulaire de base)
+  - Types et pyramide (unitaire, intégration, E2E, contractuels ; pyramide des tests)
+  - Exemples concrets (logique métier, service + repository, API HTTP, E2E)
+  - Mise en pratique (quand écrire quoi, pièges à éviter, intégration dans le workflow)
+- Lien vers [Types de tests](docs/computer-science/types-de-tests/README.md) dans le sommaire de `docs/README.md`
+
 ## [1.8.2] - 2026-01-31
 
 ### Ajouté

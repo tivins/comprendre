@@ -55,6 +55,8 @@ Style de rédaction :
 
 [SOLID](computer-science/solid/README.md)<br>cinq principes de conception orientée objet pour un code maintenable et extensible.
 
+[Types de tests](computer-science/types-de-tests/README.md)<br>différents types de tests (unitaire, intégration, E2E, contractuels) et pyramide des tests, expliqués simplement.
+
 ### Physique
 
 [Noyau des atomes](physique/noyau-atome/README.md)<br>cœur de l'atome (protons, neutrons), radioactivité, énergie nucléaire et datation.
