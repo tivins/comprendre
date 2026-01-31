@@ -5,6 +5,36 @@ Tous les changements notables de ce projet seront documentés dans ce fichier.
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
 et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
+## [1.8.2] - 2026-01-31
+
+### Ajouté
+- Documentation sur le spin (physique)
+  - Introduction (qu’est-ce que le spin, place en physique quantique, importance)
+  - Concepts fondamentaux (quantification, fermions et bosons, orientation haut/bas)
+  - Propriétés et mesure (moment magnétique, Stern–Gerlach, résonance magnétique)
+  - Exemples concrets (IRM, RMN, spintronique)
+  - Mise en pratique (reformuler, lire une actualité, ressources, bonnes pratiques)
+- Lien vers [Spin](docs/physique/spin/README.md) dans le sommaire de `docs/README.md`
+
+## [1.8.1] - 2026-01-31
+
+### Modifié
+- Réorganisation des dossiers : un dossier par science au même niveau sous `docs/`
+  - `docs/physique/noyau-atome/` (déplacé depuis `docs/noyau-atome/`) pour la physique
+  - `docs/computer-science/` inchangé pour l’informatique
+  - Lien mis à jour dans `docs/README.md`
+
+## [1.8.0] - 2026-01-31
+
+### Ajouté
+- Documentation sur le noyau des atomes (physique, hors computer-science)
+  - Introduction (qu’est-ce que le noyau, place dans l’atome, importance)
+  - Concepts fondamentaux (protons, neutrons, numéro atomique Z, nombre de masse A, isotopes)
+  - Structure et stabilité (force forte, répulsion électrique, radioactivité α/β/γ, demi-vie, fusion/fission)
+  - Exemples concrets (énergie nucléaire, datation carbone 14, médecine imagerie/radiothérapie)
+  - Mise en pratique (reformuler, lire une actualité, ressources CEA/IRSN, bonnes pratiques)
+- Section « Physique » dans le sommaire de `docs/README.md` avec lien vers le noyau des atomes
+
 ## [1.7.0] - 2026-01-31
 
 ### Ajouté

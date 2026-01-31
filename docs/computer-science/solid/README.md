@@ -4,21 +4,12 @@
 
 Les **principes SOLID** sont cinq principes fondamentaux de la programmation orientée objet et de la conception logicielle. Ils ont été introduits par Robert C. Martin (Uncle Bob) au début des années 2000 et constituent aujourd'hui la base d'un code propre, maintenable et extensible.
 
-SOLID est un acronyme qui représente :
-- **S** - Single Responsibility Principle (Principe de responsabilité unique)
-- **O** - Open/Closed Principle (Principe ouvert/fermé)
-- **L** - Liskov Substitution Principle (Principe de substitution de Liskov)
-- **I** - Interface Segregation Principle (Principe de ségrégation des interfaces)
-- **D** - Dependency Inversion Principle (Principe d'inversion des dépendances)
-
-## Objectifs de cette documentation
-
-Cette documentation vous permettra de :
-- Comprendre chaque principe SOLID en profondeur
-- Identifier les violations de ces principes dans votre code
-- Apprendre à refactoriser du code pour respecter SOLID
-- Voir des exemples concrets d'application en PHP
-- Mettre en pratique ces principes dans vos projets
+**SOLID en résumé :**
+- **S** — Single Responsibility Principle (Principe de responsabilité unique) : une classe ne devrait avoir qu'une seule raison de changer.
+- **O** — Open/Closed Principle (Principe ouvert/fermé) : les entités logicielles sont ouvertes à l'extension mais fermées à la modification.
+- **L** — Liskov Substitution Principle (Principe de substitution de Liskov) : les objets d'une superclasse doivent pouvoir être remplacés par des objets de ses sous-classes sans casser l'application.
+- **I** — Interface Segregation Principle (Principe de ségrégation des interfaces) : les clients ne devraient pas dépendre d'interfaces qu'ils n'utilisent pas.
+- **D** — Dependency Inversion Principle (Principe d'inversion des dépendances) : dépendre des abstractions, pas des implémentations concrètes.
 
 ## Structure de la documentation
 
@@ -81,23 +72,6 @@ Les exemples sont fournis principalement en **PHP** (versions 7.4+), car :
 4. **Pratiquez** en refactorisant votre propre code
 5. **Consultez les exemples concrets** pour voir SOLID en action dans des cas réels
 
-## Principes SOLID en résumé
-
-### S - Single Responsibility Principle
-> Une classe ne devrait avoir qu'une seule raison de changer.
-
-### O - Open/Closed Principle
-> Les entités logicielles devraient être ouvertes à l'extension mais fermées à la modification.
-
-### L - Liskov Substitution Principle
-> Les objets d'une superclasse doivent pouvoir être remplacés par des objets de ses sous-classes sans casser l'application.
-
-### I - Interface Segregation Principle
-> Les clients ne devraient pas être forcés de dépendre d'interfaces qu'ils n'utilisent pas.
-
-### D - Dependency Inversion Principle
-> Dépendre des abstractions, pas des implémentations concrètes.
-
 ---
 
-**Note importante** : SOLID n'est pas une fin en soi, mais un moyen d'atteindre un code de qualité. Ces principes doivent être appliqués avec discernement. Un code qui respecte SOLID mais qui est incompréhensible n'est pas meilleur qu'un code simple qui viole certains principes. L'objectif est de trouver le bon équilibre entre respect des principes et pragmatisme.
+> **Note importante** — SOLID n'est pas une fin en soi, mais un moyen d'atteindre un code de qualité. Ces principes doivent être appliqués avec discernement. Un code qui respecte SOLID mais qui est incompréhensible n'est pas meilleur qu'un code simple qui viole certains principes. L'objectif est de trouver le bon équilibre entre respect des principes et pragmatisme.
