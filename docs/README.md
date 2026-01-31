@@ -9,7 +9,7 @@ Collection de documentation en français.
 
 ---
 
-> [!IMPORTANT]  Disclaimer
+> [!IMPORTANT]
 >
 > Les documents ont été générés par des IA. Cependant, ces outils ont été fortement préparés à réaliser des documents compréhensibles utilisant avec des règles précises.
 >
