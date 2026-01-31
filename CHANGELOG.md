@@ -5,6 +5,25 @@ Tous les changements notables de ce projet seront documentés dans ce fichier.
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
 et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
+## [1.6.0] - 2026-01-31
+
+### Ajouté
+- Documentation sur l’identification, l’authentification et l’autorisation (IAA)
+  - Introduction (définitions, pourquoi distinguer les trois notions, analogie)
+  - Concepts fondamentaux (identification, authentification, autorisation en détail)
+  - Exemples concrets (flux de connexion, API JWT, RBAC)
+  - Mise en pratique (bonnes pratiques, pièges à éviter, intégration)
+
+## [1.5.0] - 2026-01-31
+
+### Ajouté
+- Documentation complète sur le bus (système de transmission de données)
+  - Introduction (définition, analogie, rôle dans l’architecture, maître/esclave)
+  - Concepts fondamentaux (lignes données/adresses/contrôle, largeur, bande passante, arbitrage, synchrone/asynchrone)
+  - Types et architectures (bus système, bus E/S, parallèle vs série, architecture multi-bus)
+  - Exemples concrets (PCI/PCIe, USB, I2C, SPI, CAN, Ethernet)
+  - Mise en pratique (critères de choix, bonnes pratiques, exemple capteur embarqué)
+
 ## [1.4.0] - 2026-01-30
 
 ### Ajouté
