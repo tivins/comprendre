@@ -5,6 +5,17 @@ Tous les changements notables de ce projet seront documentés dans ce fichier.
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
 et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
+## [1.8.4] - 2026-02-01
+
+### Ajouté
+- Documentation sur les tests des requêtes MySQL complexes et du traitement des données (computer-science)
+  - Introduction (enjeux, ce qu’on teste, vocabulaire)
+  - Concepts fondamentaux (découplage requête / traitement, types de tests, reproductibilité)
+  - Stratégies et outils (Testcontainers, fixtures, mocks du repository, assertions)
+  - Exemples concrets (rapport avec agrégation, requête multi-tables, traitement après fetch)
+  - Mise en pratique (quand quoi tester, pièges, intégration dans le workflow et la CI)
+- Lien vers [Tests requêtes MySQL complexes](docs/computer-science/tests-requetes-mysql-complexes/README.md) dans le sommaire de `docs/README.md`
+
 ## [1.8.3] - 2026-01-31
 
 ### Ajouté

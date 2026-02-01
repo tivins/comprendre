@@ -57,6 +57,8 @@ Style de rédaction :
 
 [Types de tests](computer-science/types-de-tests/README.md)<br>différents types de tests (unitaire, intégration, E2E, contractuels) et pyramide des tests, expliqués simplement.
 
+[Tests requêtes MySQL complexes](computer-science/tests-requetes-mysql-complexes/README.md)<br>méthodes courantes et recommandées pour tester les requêtes MySQL complexes et le traitement des données (fixtures, mocks, intégration BDD).
+
 ### Physique
 
 [Noyau des atomes](physique/noyau-atome/README.md)<br>cœur de l'atome (protons, neutrons), radioactivité, énergie nucléaire et datation.
