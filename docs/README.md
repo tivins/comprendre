@@ -53,6 +53,8 @@ Style de rédaction :
 
 [Identification, authentification et autorisation](computer-science/identification-authentification-autorisation/README.md)<br>différences entre identification (qui êtes-vous ?), authentification (prouvez-le) et autorisation (avez-vous le droit ?).
 
+[Refactorisation code legacy](computer-science/refactorisation-code-legacy/README.md)<br>stratégies pour refactoriser du code legacy de façon progressive : tests de caractérisation, seams, Strangler Fig, branche par abstraction.
+
 [SOLID](computer-science/solid/README.md)<br>cinq principes de conception orientée objet pour un code maintenable et extensible.
 
 [Types de tests](computer-science/types-de-tests/README.md)<br>différents types de tests (unitaire, intégration, E2E, contractuels) et pyramide des tests, expliqués simplement.

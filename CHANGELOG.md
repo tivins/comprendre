@@ -5,6 +5,17 @@ Tous les changements notables de ce projet seront documentés dans ce fichier.
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
 et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
+## [1.8.5] - 2026-02-01
+
+### Ajouté
+- Documentation sur les stratégies de refactorisation de code legacy (computer-science)
+  - Introduction (enjeux du legacy, refactoring incrémental vs réécriture, risques et bénéfices)
+  - Concepts fondamentaux (tests de caractérisation, seams, encapsuler puis remplacer)
+  - Stratégies et approches (Strangler Fig, branche par abstraction, exécution parallèle, feature flags)
+  - Exemples concrets (introduction de seams, tests de caractérisation, remplacement d’un service de paiement)
+  - Mise en pratique (quand refactoriser, pièges à éviter, intégration dans le workflow)
+- Lien vers [Refactorisation code legacy](docs/computer-science/refactorisation-code-legacy/README.md) dans le sommaire de `docs/README.md`
+
 ## [1.8.4] - 2026-02-01
 
 ### Ajouté
