@@ -59,6 +59,8 @@ Style de rédaction :
 
 [Types de tests](computer-science/types-de-tests/README.md)<br>différents types de tests (unitaire, intégration, E2E, contractuels) et pyramide des tests, expliqués simplement.
 
+[tester les ensembles](computer-science/cases/tester-un-ensemble/README.md)<br>comment structurer les tests d'un moteur de recherche Drupal 7 (requêtes dynamiques, tables temporaires, filtres combinables) : unitaire, intégration, fonctionnel, plan d'amélioration.
+
 [Tests requêtes MySQL complexes](computer-science/tests-requetes-mysql-complexes/README.md)<br>méthodes courantes et recommandées pour tester les requêtes MySQL complexes et le traitement des données (fixtures, mocks, intégration BDD).
 
 ### Physique

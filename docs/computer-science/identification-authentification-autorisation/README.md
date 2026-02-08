@@ -20,20 +20,6 @@ Cette documentation vous permettra de :
 3. **[Exemples concrets](./03-exemples-concrets.md)** – Flux de connexion, API, rôles et permissions
 4. **[Mise en pratique](./04-mise-en-pratique.md)** – Bonnes pratiques, pièges à éviter, intégration
 
-## Pour qui ?
-
-Cette documentation s’adresse à :
-- Développeurs web ou backend mettant en place login, sessions ou API sécurisées
-- Étudiants en informatique découvrant la sécurité des systèmes
-- Architectes ou chefs de projet souhaitant clarifier le vocabulaire IAA (Identification, Authentification, Autorisation)
-- Toute personne souhaitant comprendre « qui fait quoi » dans un contrôle d’accès
-
-## Prérequis
-
-- Notions de base sur les applications web (requêtes HTTP, sessions, cookies)
-- Idée générale de ce qu’est un « utilisateur » et un « accès » à une ressource
-- (Optionnel) Connaissance de OAuth2, JWT ou RBAC pour les exemples avancés
-
 ## Vocabulaire utilisé
 
 - **Identification** : déclarer « qui je suis » (ex. login, email, identifiant)

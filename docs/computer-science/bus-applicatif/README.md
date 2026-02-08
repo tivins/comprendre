@@ -21,19 +21,6 @@ Cette documentation vous permettra de :
 4. **[Exemples concrets](./04-exemples-concrets.md)** – PHP, Symfony Messenger, CQRS, agrégats
 5. **[Mise en pratique](./05-mise-en-pratique.md)** – Choix d’implémentation, bonnes pratiques, pièges à éviter
 
-## Pour qui ?
-
-Cette documentation s’adresse à :
-- Développeurs PHP (ou autres langages) souhaitant découpler leur application
-- Équipes adoptant ou découvrant le Domain-Driven Design (DDD) et le CQRS
-- Architectes logiciels cherchant à structurer les flux de commandes et d’événements
-- Toute personne voulant comprendre comment un bus applicatif simplifie la communication entre composants
-
-## Prérequis
-
-- Notions de programmation orientée objet (classes, interfaces, injection de dépendances)
-- Idée générale du DDD (entités, agrégats, événements de domaine)
-- (Optionnel) Connaissance de base de Symfony ou d’un framework PHP moderne
 
 ## Vocabulaire utilisé
 

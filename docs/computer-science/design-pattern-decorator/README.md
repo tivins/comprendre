@@ -22,24 +22,6 @@ Cette documentation vous permettra de :
 3. **[Exemples concrets](./03-exemples-concrets.md)** - Café, logger, validation, flux de données
 4. **[Mise en pratique](./04-mise-en-pratique.md)** - Quand l'utiliser, alternatives, pièges à éviter
 
-## Pour qui ?
-
-Cette documentation s'adresse à :
-- Développeurs souhaitant étendre des objets sans modifier leurs classes
-- Architectes cherchant une alternative propre à l'héritage pour les extensions
-- Étudiants en informatique découvrant les patterns structurels
-- Équipes voulant appliquer le principe Open/Closed de manière concrète
-
-## Prérequis
-
-- Connaissance de base en programmation orientée objet
-- Notions de classe, interface, héritage et polymorphisme
-- Idéalement : avoir lu l’[introduction aux Design Patterns](../design-pattern/01-introduction.md)
-
-## Langage utilisé dans les exemples
-
-Les exemples sont rédigés en **pseudo-code style Java** (interfaces, classes, `implements`/`extends`, typage explicite) pour rester proches des concepts OOP classiques et du style des autres documentations du projet.
-
 ---
 
 **Note** : Le Decorator est un outil pour étendre le comportement de façon modulaire. Il ne doit pas être utilisé pour tout étendre : réserver son usage aux cas où les combinaisons de fonctionnalités sont nombreuses ou évolutives.

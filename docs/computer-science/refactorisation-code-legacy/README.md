@@ -24,22 +24,6 @@ Cette documentation vous permettra de :
 4. **[Exemples concrets](./04-exemples-concrets.md)** — Extraction de service, tests sur code non testé, remplacement d’une dépendance
 5. **[Mise en pratique](./05-mise-en-pratique.md)** — Quand refactoriser, pièges courants, intégration dans le workflow
 
-## Pour qui ?
-
-- Développeurs qui maintiennent ou font évoluer du code ancien sans tests ou mal structuré
-- Équipes qui hésitent entre « tout réécrire » et « ne rien toucher »
-- Toute personne souhaitant structurer une approche progressive du refactoring legacy
-
-## Prérequis
-
-- Pratique du développement (Java, PHP, TypeScript ou équivalent)
-- Notions de tests unitaires et d’injection de dépendances (voir [Types de tests](../types-de-tests/README.md), [Dependency Injection](../dependency-injection/README.md))
-- Idéalement : notions de design patterns et de couplage (voir [SOLID](../solid/README.md))
-
-## Langage utilisé dans les exemples
-
-Les exemples sont en **pseudo-code inspiré de Java/PHP/TypeScript** : interfaces, classes, injection au constructeur, volontairement lisibles pour plusieurs écosystèmes.
-
 ---
 
 **Note** : Refactoriser du legacy ne signifie pas tout réécrire d’un coup. Les stratégies décrites visent à réduire le risque en avançant par petits pas, en s’appuyant sur des tests de caractérisation et des points de couture pour isoler puis remplacer le code problématique.

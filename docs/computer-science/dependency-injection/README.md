@@ -23,24 +23,6 @@ Cette documentation vous permettra de :
 3. **[Exemples concrets](./03-exemples-concrets.md)** - Service métier, repository, notification, tests unitaires
 4. **[Mise en pratique](./04-mise-en-pratique.md)** - Quand l'utiliser, pièges à éviter, intégration dans un projet
 
-## Pour qui ?
-
-Cette documentation s'adresse à :
-- Développeurs souhaitant réduire le couplage et améliorer la testabilité
-- Étudiants en informatique découvrant les bonnes pratiques de conception
-- Équipes adoptant des frameworks basés sur l'IoC (Spring, etc.)
-- Toute personne souhaitant approfondir le principe DIP (SOLID)
-
-## Prérequis
-
-- Connaissance de base en programmation orientée objet
-- Notions de classe, interface, constructeur et polymorphisme
-- Idéalement : avoir lu le [principe d'inversion des dépendances (DIP)](../solid/06-dependency-inversion.md)
-
-## Langage utilisé dans les exemples
-
-Les exemples sont rédigés en **pseudo-code style Java** (interfaces, classes, typage explicite) pour rester proches des concepts OOP classiques et du style des autres documentations du projet.
-
 ---
 
 **Note** : L'injection de dépendances n'est pas un objectif en soi mais un moyen d'obtenir un code découplé, testable et maintenable. Elle doit être appliquée avec discernement.

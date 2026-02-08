@@ -20,20 +20,6 @@ Cette documentation vous permettra de :
 4. **[Exemples concrets](./04-exemples-concrets.md)** - Cas d'usage réels avec code
 5. **[Mise en pratique](./05-mise-en-pratique.md)** - Guide pour démarrer avec DDD
 
-## Pour qui ?
-
-Cette documentation s'adresse à :
-- Développeurs souhaitant améliorer la qualité de leur code
-- Architectes logiciels cherchant à mieux organiser leurs systèmes
-- Équipes travaillant sur des domaines métier complexes
-- Étudiants en informatique découvrant les patterns de conception
-
-## Prérequis
-
-- Connaissance de base en programmation orientée objet
-- Familiarité avec les concepts de modélisation
-- Compréhension des principes SOLID
-
 ---
 
 **Note** : Le DDD n'est pas une solution miracle. C'est une approche qui fonctionne particulièrement bien pour les domaines métiers complexes, mais qui peut être excessive pour des applications simples.

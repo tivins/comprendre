@@ -21,20 +21,6 @@ Cette documentation vous permettra de :
 4. **[Exemples concrets](./04-exemples-concrets.md)** – PCI, USB, I2C, SPI, CAN, Ethernet
 5. **[Mise en pratique](./05-mise-en-pratique.md)** – Critères de choix, conception, bonnes pratiques
 
-## Pour qui ?
-
-Cette documentation s’adresse à :
-- Étudiants en informatique ou en électronique découvrant l’architecture des ordinateurs
-- Développeurs embarqués ou système travaillant avec des bus (I2C, SPI, USB)
-- Architectes matériel/logiciel ayant besoin de notions sur les interfaces de communication
-- Toute personne souhaitant comprendre comment les données circulent dans un système
-
-## Prérequis
-
-- Notions de base en binaire et en représentation des données
-- Idée générale du rôle du processeur, de la mémoire et des périphériques
-- (Optionnel) Bases en électronique numérique pour les bus bas niveau
-
 ## Vocabulaire utilisé
 
 - **Bus** : canal de transmission partagé entre plusieurs composants

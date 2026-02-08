@@ -21,21 +21,6 @@ Cette documentation vous permettra de :
 4. **[Exemples concrets](./04-exemples-concrets.md)** - Cas d'usage avec code PHP
 5. **[Mise en pratique](./05-mise-en-pratique.md)** - Installation, première API, déploiement
 
-## Pour qui ?
-
-Cette documentation s'adresse à :
-- Développeurs PHP/Symfony voulant exposer des APIs REST ou GraphQL rapidement
-- Architectes cherchant un framework API maintenable et extensible
-- Équipes adoptant une architecture API-first ou Jamstack
-- Étudiants en informatique découvrant les APIs web modernes
-
-## Prérequis
-
-- Connaissance de base en PHP (orienté objet, attributs PHP 8+)
-- Notions de HTTP (méthodes, codes de statut, en-têtes)
-- Familiarité avec REST ou GraphQL (recommandé)
-- Symfony ou Doctrine (utile mais pas obligatoire pour suivre les concepts)
-
 ## Stack typique
 
 - **Backend** : API Platform Core, Symfony, Doctrine ORM (optionnel)

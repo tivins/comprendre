@@ -23,21 +23,6 @@ Cette documentation vous permettra de :
 3. **[Exemples concrets](./03-exemples-concrets.md)** — Cas métier et technique : service, API, base de données, front
 4. **[Mise en pratique](./04-mise-en-pratique.md)** — Quand écrire quoi, pièges à éviter, intégration dans le workflow
 
-## Pour qui ?
-
-- Développeurs voulant structurer ou revoir leur stratégie de tests
-- Équipes qui mélangent unitaire et intégration sans distinction claire
-- Toute personne souhaitant approfondir les tests automatisés sans jargon superflu
-
-## Prérequis
-
-- Pratique courante d’un langage (Java, PHP, TypeScript, etc.) et d’un framework de test (JUnit, PHPUnit, Jest, etc.)
-- Notions de mock, stub et isolation (abordées dans la doc si besoin)
-
-## Langage utilisé dans les exemples
-
-Les exemples sont en **pseudo-code inspiré de Java/TypeScript** : assertions, mocks et structure de tests volontairement lisibles pour plusieurs écosystèmes.
-
 ---
 
 **Note** : Les types de tests ne sont pas une fin en soi ; ils servent la confiance dans les changements et la maintenabilité. Le bon dosage dépend du contexte projet.

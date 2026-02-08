@@ -24,22 +24,6 @@ Cette documentation vous permettra de :
 4. **[Exemples concrets](./04-exemples-concrets.md)** — Rapport avec agrégation, requête multi-tables, traitement métier après fetch
 5. **[Mise en pratique](./05-mise-en-pratique.md)** — Quand privilégier quelle approche, pièges courants, intégration dans le workflow et la CI
 
-## Pour qui ?
-
-- Développeurs qui écrivent ou maintiennent des requêtes SQL complexes et du code qui en consomme les résultats
-- Équipes qui hésitent entre tout mocker et tout tester contre une vraie MySQL
-- Toute personne souhaitant clarifier les bonnes pratiques de test autour de la couche données (requêtes + traitement)
-
-## Prérequis
-
-- Pratique de SQL (SELECT, JOINs, agrégations, sous-requêtes) et d’un langage applicatif (Java, PHP, TypeScript, etc.)
-- Notions de tests unitaires et d’intégration (voir [Types de tests](../types-de-tests/README.md))
-- Idéalement : notions de mock, stub et d’injection de dépendances
-
-## Langage utilisé dans les exemples
-
-Les exemples sont en **pseudo-code inspiré de Java/TypeScript** : requêtes SQL réelles ou réalistes, assertions et structure de tests volontairement lisibles pour plusieurs écosystèmes.
-
 ---
 
 **Note** : Tester les requêtes complexes et le traitement des données ne signifie pas tout faire en intégration ; le découplage et le choix du niveau de test (unitaire vs intégration) restent essentiels pour garder des tests rapides et maintenables.

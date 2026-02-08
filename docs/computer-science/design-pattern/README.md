@@ -58,27 +58,6 @@ Gèrent la communication et les responsabilités entre objets.
 - Template Method
 - Visitor
 
-## Pour qui ?
-
-Cette documentation s'adresse à :
-- Développeurs souhaitant améliorer la qualité et la maintenabilité de leur code
-- Architectes logiciels cherchant des solutions éprouvées aux problèmes courants
-- Étudiants en informatique découvrant les patterns de conception
-- Équipes souhaitant standardiser leurs pratiques de développement
-
-## Prérequis
-
-- Connaissance de base en programmation orientée objet
-- Familiarité avec les concepts de classe, héritage, polymorphisme
-- Compréhension des principes SOLID (recommandé mais pas obligatoire)
-
-## Langages utilisés dans les exemples
-
-Les exemples sont fournis principalement en :
-- **Python** - Pour sa simplicité et sa lisibilité
-- **TypeScript/JavaScript** - Pour le développement web moderne
-- **Java** - Pour illustrer les concepts OOP classiques
-
 ---
 
 **Note importante** : Les design patterns ne sont pas des solutions miracles. Ils doivent être utilisés judicieusement. Un pattern mal appliqué peut compliquer inutilement votre code. L'objectif est de résoudre un problème réel, pas d'appliquer un pattern pour le plaisir.

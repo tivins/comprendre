@@ -41,29 +41,6 @@ Les **principes SOLID** sont cinq principes fondamentaux de la programmation ori
 - **Code visqueux** : Les bonnes pratiques deviennent difficiles à appliquer
 - **Code opaque** : Difficile à comprendre et à maintenir
 
-## Pour qui ?
-
-Cette documentation s'adresse à :
-- Développeurs PHP souhaitant améliorer la qualité de leur code
-- Architectes logiciels cherchant à créer des systèmes robustes
-- Équipes de développement souhaitant standardiser leurs pratiques
-- Étudiants en informatique découvrant les principes de conception
-- Code reviewers souhaitant identifier les problèmes de conception
-
-## Prérequis
-
-- Connaissance de base en programmation orientée objet
-- Familiarité avec PHP (classes, interfaces, héritage)
-- Compréhension des concepts de base : encapsulation, polymorphisme, abstraction
-- Expérience pratique en développement (recommandé)
-
-## Langage utilisé dans les exemples
-
-Les exemples sont fournis principalement en **PHP** (versions 7.4+), car :
-- PHP est largement utilisé dans le développement web
-- Les principes SOLID sont particulièrement pertinents pour PHP moderne
-- Les exemples sont directement applicables dans des projets réels
-
 ## Comment utiliser cette documentation
 
 1. **Commencez par l'introduction** pour comprendre le contexte global

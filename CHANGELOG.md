@@ -5,6 +5,23 @@ Tous les changements notables de ce projet seront documentés dans ce fichier.
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
 et ce projet adhère au [Semantic Versioning](https://semver.org/lang/fr/).
 
+## [1.8.7] - 2026-02-07
+
+### Modifié
+- Renommage de la doc « Stratégie de tests pour un moteur de recherche complexe (Drupal 7) » : dossier `strategie-tests-moteur-recherche` → `cases/tester-un-ensemble`, titre → « tester les ensembles »
+- Lien mis à jour dans le sommaire : [tester les ensembles](docs/computer-science/cases/tester-un-ensemble/README.md)
+
+## [1.8.6] - 2026-02-06
+
+### Ajouté
+- Documentation sur la stratégie de tests pour un moteur de recherche complexe Drupal 7 (computer-science)
+  - Introduction (contexte Drupal 7, nature du problème, diagnostic de l'approche actuelle PHPUnit + données pré-insérées)
+  - Concepts fondamentaux (couches testables d'un moteur de recherche, niveaux de test, découplage dans un contexte legacy)
+  - Stratégies et approches (tests unitaires des filtres et du traitement, intégration avec BDD réelle, fonctionnel, tables temporaires, hooks)
+  - Exemples concrets (PHP/PHPUnit : résolution de filtres, scoring, recherche en base, table temporaire, introspection de requête)
+  - Mise en pratique (évaluation de l'existant, plan d'amélioration en 5 étapes, intégration CI, pièges à éviter)
+- Lien vers [Stratégie de tests moteur de recherche](docs/computer-science/cases/tester-un-ensemble/README.md) dans le sommaire de `docs/README.md` (dossier renommé en 1.8.7)
+
 ## [1.8.5] - 2026-02-01
 
 ### Ajouté

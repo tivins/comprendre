@@ -22,24 +22,6 @@ Cette documentation vous permettra de :
 3. **[Exemples concrets](./03-exemples-concrets.md)** - Validation, erreurs HTTP, pipeline, niveaux de support
 4. **[Mise en pratique](./04-mise-en-pratique.md)** - Quand l'utiliser, alternatives, pièges à éviter
 
-## Pour qui ?
-
-Cette documentation s'adresse à :
-- Développeurs souhaitant découpler l'émetteur d'une requête de ses traitants possibles
-- Architectes cherchant une solution flexible pour des pipelines de traitement
-- Étudiants en informatique découvrant les patterns comportementaux
-- Équipes voulant éviter les longues séries de `if/else` ou de `switch` pour router des requêtes
-
-## Prérequis
-
-- Connaissance de base en programmation orientée objet
-- Notions de classe, interface, héritage et polymorphisme
-- Idéalement : avoir lu l'[introduction aux Design Patterns](../design-pattern/01-introduction.md)
-
-## Langage utilisé dans les exemples
-
-Les exemples sont rédigés en **pseudo-code style Java** (interfaces, classes, `implements`/`extends`, typage explicite) pour rester proches des concepts OOP classiques et du style des autres documentations du projet.
-
 ---
 
 **Note** : La Chaîne de responsabilité est un outil pour découpler l'émetteur des traitants et pour faire circuler une requête jusqu'à ce qu'elle soit prise en charge. Elle ne doit pas être utilisée lorsque un seul objet doit toujours traiter la requête (un simple appel de méthode suffit).

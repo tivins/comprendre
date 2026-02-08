@@ -64,29 +64,6 @@ Ne créez **pas** un ADR pour :
 - Décisions purement fonctionnelles (features)
 - Décisions de style de code (formatage, conventions mineures)
 
-## Pour qui ?
-
-Cette documentation s'adresse à :
-- Architectes logiciels souhaitant documenter leurs décisions
-- Lead developers responsables de l'architecture technique
-- Équipes de développement souhaitant améliorer leur traçabilité
-- Managers techniques cherchant à comprendre l'historique des décisions
-- Étudiants en informatique découvrant les pratiques de documentation
-
-## Prérequis
-
-- Connaissance de base en développement logiciel
-- Familiarité avec les concepts d'architecture logicielle
-- Compréhension des enjeux de maintenance et de documentation
-
-## Format des exemples
-
-Les exemples sont fournis dans différents contextes :
-- **Applications web** - Décisions frontend/backend
-- **Microservices** - Décisions d'architecture distribuée
-- **Applications mobiles** - Décisions spécifiques mobile
-- **Systèmes d'entreprise** - Décisions à grande échelle
-
 ---
 
 **Note importante** : Les ADR ne sont pas des spécifications techniques détaillées. Ils documentent le **pourquoi** d'une décision, pas le **comment** de son implémentation. Un ADR doit être court, clair et facile à comprendre, même pour quelqu'un qui n'était pas présent lors de la décision.
